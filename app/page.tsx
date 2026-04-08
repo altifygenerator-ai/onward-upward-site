@@ -181,7 +181,27 @@ export default function HomePage() {
           View full seasonal →
         </Link>
       </section>
+<section className="mx-auto max-w-5xl px-4 py-16 text-center">
+  <p className="text-sm uppercase tracking-[0.2em] text-emerald-300/80">
+    What we stand for
+  </p>
 
+  <h2 className="mt-3 text-3xl md:text-4xl font-semibold">
+    Built on faith, work, and doing things right.
+  </h2>
+
+  <p className="mt-6 text-white/70 leading-relaxed">
+    The mission of Onward & Upward Services is to uplift and strengthen our community
+    through honest work, quality service, and products that bring life, growth, and transformation.
+    We serve with faith, excellence, and compassion—helping build a better community one yard at a time.
+  </p>
+
+  <p className="mt-6 text-white/60 leading-relaxed">
+    Our vision is to be a driving force for growth, restoration, and community impact—
+    bringing beauty from the ground up and hope to the people we serve. Every project
+    reflects purpose, integrity, and the belief that hard work still matters.
+  </p>
+</section>
       {/* REVIEWS */}
 <section id="contact" className="mx-auto max-w-7xl px-4 py-16">
   <div className="grid md:grid-cols-2 gap-10">
