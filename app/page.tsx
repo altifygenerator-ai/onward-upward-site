@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { formatPhoneLink, formatMailLink, formatSmsLink } from "@/lib/utils";
 import {
   ArrowRight,
   CalendarDays,
@@ -182,44 +183,68 @@ export default function HomePage() {
       </section>
 
       {/* REVIEWS */}
-      <section id="reviews" className="mx-auto max-w-7xl px-4 py-16">
-        <SectionHeading
-          eyebrow="Reviews"
-          title="What people are saying"
-          text="Real feedback from customers."
-        />
-
-        <div className="grid md:grid-cols-3 gap-6 mt-10">
-          {siteData.reviews.map((review, i) => (
-            <div key={review.name + i} className="bg-white/5 p-6 rounded-xl">
-              <StarRow rating={5} />
-              <Image src={review.image} alt="review" width={200} height={200} className="w-full h-[150px] object-cover mt-4 rounded" />
-              <p className="mt-4 text-white/70">“{review.quote}”</p>
-              <p className="mt-2 font-semibold">{review.name}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-      <section id="quote" className="mx-auto max-w-7xl px-4 py-16">
+<section id="contact" className="mx-auto max-w-7xl px-4 py-16">
   <div className="grid md:grid-cols-2 gap-10">
 
     {/* LEFT SIDE */}
     <div>
       <h2 className="text-3xl md:text-4xl font-semibold">
-        Get a quick quote
+        Get in touch
       </h2>
+
       <p className="mt-4 text-white/70">
-        Tell us what you need and we’ll get back to you fast. You can also call if you want a quicker answer.
+        Call, text, or send a message and we’ll get back to you as soon as possible.
       </p>
 
-      <div className="mt-6">
+      {/* MAIN LINE */}
+      <div className="mt-6 space-y-3">
         <a
-          href={`tel:${siteData.contact.phone.replace(/[^\d+]/g, "")}`}
-          className="inline-block bg-emerald-400 text-black px-6 py-3 rounded-full font-semibold"
+          href={formatPhoneLink(siteData.contact.phone)}
+          className="block bg-emerald-400 text-black px-6 py-3 rounded-xl font-semibold text-center"
         >
-          Call Now: {siteData.contact.phone}
+          Call Main Line: {siteData.contact.phone}
+        </a>
+
+        <a
+          href={formatMailLink(siteData.contact.email)}
+          className="block border border-white/20 px-6 py-3 rounded-xl text-center"
+        >
+          Email: {siteData.contact.email}
         </a>
       </div>
+
+      {/* TEAM CONTACTS */}
+      <div className="mt-8 grid md:grid-cols-2 gap-4">
+        {siteData.contacts.map((person) => (
+          <div
+            key={person.name}
+            className="bg-white/5 p-4 rounded-xl border border-white/10"
+          >
+            <p className="text-sm text-white/50">{person.role}</p>
+            <p className="text-lg font-semibold">{person.name}</p>
+
+            <div className="mt-3 space-y-2">
+              <a
+                href={formatPhoneLink(person.phone)}
+                className="block text-emerald-300 font-medium"
+              >
+                📞 {person.phone}
+              </a>
+
+              <a
+                href={formatSmsLink(person.phone)}
+                className="block text-white/70 text-sm"
+              >
+                Text {person.name}
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <p className="mt-6 text-sm text-white/50">
+        {siteData.contact.serviceArea}
+      </p>
     </div>
 
     {/* RIGHT SIDE FORM */}
@@ -244,20 +269,9 @@ export default function HomePage() {
         className="w-full p-3 rounded bg-black/30 border border-white/10"
       />
 
-      <select
-        name="service"
-        className="w-full p-3 rounded bg-black/30 border border-white/10"
-      >
-        <option>Service Needed</option>
-        <option>Landscaping</option>
-        <option>Excavation</option>
-        <option>Tree / Debris Removal</option>
-        <option>Seasonal / Plants</option>
-      </select>
-
       <textarea
         name="details"
-        placeholder="Project details..."
+        placeholder="What do you need help with?"
         rows={4}
         className="w-full p-3 rounded bg-black/30 border border-white/10"
       />
@@ -266,7 +280,7 @@ export default function HomePage() {
         type="submit"
         className="w-full bg-emerald-400 text-black py-3 rounded-full font-semibold"
       >
-        Send Request
+        Send Message
       </button>
     </form>
   </div>

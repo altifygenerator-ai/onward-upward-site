@@ -7,11 +7,24 @@ export const siteData = {
   },
 
   contact: {
+  phone: "(501) 446-0376",
+  email: "courtneydavis222@icloud.com",
+  address: "1499 Amity Rd, Hot Springs, AR 71913",
+  serviceArea: "Hot Springs, Glenwood, and surrounding Arkansas communities",
+},
+
+contacts: [
+  {
+    name: "Justyn Sheets",
+    role: "For quotes & job questions",
     phone: "(501) 446-0376",
-    email: "courtneydavis222@icloud.com",
-    address: "1499 Amity Rd, Hot Springs, AR 71913",
-    serviceArea: "Hot Springs, Glenwood, and surrounding Arkansas communities",
   },
+  {
+    name: "Rebecca Turner",
+    role: "For scheduling & availability",
+    phone: "(620) 687-1126",
+  },
+],
 
   hero: {
     eyebrow: "Garden Season Is Here",

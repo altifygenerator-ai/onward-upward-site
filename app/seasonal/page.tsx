@@ -138,8 +138,7 @@ export default function SeasonalPage() {
             <div>
               <h3 className="text-xl font-semibold">Current seasonal promo</h3>
               <p className="text-white/70 mt-2">
-                Use this section for current deals like bulk soil pricing, plant discounts,
-                or limited-time offers. This should be updated regularly.
+                Keep an eye on this space for rotating seasonal promotions, discounts, and special offers. It’s our way of saying thanks for being part of the Onward & Upward community.
               </p>
             </div>
           </div>
