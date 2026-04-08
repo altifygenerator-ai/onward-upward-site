@@ -8,7 +8,7 @@ export const siteData = {
 
   contact: {
   phone: "(501) 446-0376",
-  email: "courtneydavis222@icloud.com",
+  email: "rebeccaturner220144@gmail.com",
   address: "1499 Amity Rd, Hot Springs, AR 71913",
   serviceArea: "Hot Springs, Glenwood, and surrounding Arkansas communities",
 },
