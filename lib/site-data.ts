@@ -1,3 +1,12 @@
+type Product = {
+  name: string;
+  price: string;
+  note: string;
+  description: string;
+  images: [string, ...string[]];
+};
+
+
 export const siteData = {
   brand: {
     name: "Onward & Upward Services",
@@ -93,7 +102,54 @@ contacts: [
       tag: "New",
     },
   ],
+seasonalIntro: {
+  eyebrow: "More than just seasonal",
+  title: "Products that stay available all year.",
+  body:
+    "Some materials rotate with the season, but others stay available for ongoing projects, cleanup, and landscape work.",
+},
 
+
+  products: [
+  {
+    name: "Compost & Manure Blend",
+    price: "$40 / yard",
+    note: "Pickup or delivery",
+    description:
+      "Premium soil blends for gardens, beds, and landscape projects. Great for ongoing use and bigger installs.",
+    images: [
+  "/images/products/compostandmanure.jpeg",
+  "/images/products/compostandmanure2.jpeg",
+  
+  ],
+  },
+  {
+    name: "Compost, Manure & Sandy Loam Blend",
+    price: "$45 / yard",
+    note: "Available year-round",
+    description:
+      "Clean mulch options for moisture control, weed suppression, and a finished landscape look.",
+    images: [
+  "/images/products/compmanloam.jpeg",
+  "/images/products/compmanloam2.jpeg",
+  
+    ],
+  },
+  
+  {
+    name: "Supersoil Blend",
+    price: "$65 / yard",
+    note: "Project-based material",
+    description:
+      "Helpful for driveways, drainage, grading, and site prep. Perfect for larger property work.",
+    images: [
+  "/images/products/supersoil.jpeg",
+  "/images/products/supersoil2.jpeg",
+  
+    ],
+  },
+
+],
   reviews: [
     {
       name: "Tom",

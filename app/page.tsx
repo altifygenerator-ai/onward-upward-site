@@ -137,8 +137,9 @@ export default function HomePage() {
           })}
         </div>
       </section>
+      
 
-      {/* GALLERY */}
+  
       <section id="work" className="mx-auto max-w-7xl px-4 py-16">
         <SectionHeading
           eyebrow="Work"

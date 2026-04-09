@@ -1,5 +1,8 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
+import { useState } from "react";
 import {
   ArrowRight,
   CalendarDays,
@@ -20,6 +23,55 @@ function SectionHeading({ eyebrow, title, text }: any) {
         {title}
       </h2>
       <p className="mt-4 text-white/70 leading-relaxed">{text}</p>
+    </div>
+  );
+}
+
+/* ✅ NEW: Product Card with click-through images */
+function ProductCard({ item }: { item: any }) {
+  const [index, setIndex] = useState(0);
+
+  return (
+    <div className="flex h-full flex-col overflow-hidden rounded-[1.5rem] border border-white/10 bg-white/5 shadow-lg shadow-black/20">
+      {/* IMAGE */}
+      <div
+        className="relative h-[220px] w-full cursor-pointer hover:opacity-90 transition"
+        onClick={() =>
+          setIndex((prev) => (prev + 1) % item.images.length)
+        }
+      >
+        <Image
+          src={item.images[index]}
+          alt={item.name}
+          fill
+          className="object-cover"
+        />
+
+        {/* OVERLAY */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent" />
+
+        {/* NOTE */}
+        <div className="absolute left-4 top-4">
+          <span className="rounded-full border border-emerald-400/20 bg-emerald-400/10 px-3 py-1 text-xs font-medium text-emerald-100 backdrop-blur">
+            {item.note}
+          </span>
+        </div>
+
+        {/* PRICE */}
+        <div className="absolute bottom-4 left-4">
+          <span className="rounded-full bg-black/60 px-3 py-1 text-sm font-semibold text-white backdrop-blur">
+            {item.price}
+          </span>
+        </div>
+      </div>
+
+      {/* CONTENT */}
+      <div className="flex flex-1 flex-col p-6">
+        <h3 className="text-xl font-semibold text-white">{item.name}</h3>
+        <p className="mt-3 flex-grow text-white/70 leading-relaxed">
+          {item.description}
+        </p>
+      </div>
     </div>
   );
 }
@@ -78,16 +130,12 @@ export default function SeasonalPage() {
               <ArrowRight className="inline ml-2 w-4 h-4" />
             </Link>
 
-            <Link
-              href="/"
-              className="border px-6 py-3 rounded-full"
-            >
+            <Link href="/" className="border px-6 py-3 rounded-full">
               Back Home
             </Link>
           </div>
         </div>
 
-        {/* FEATURED IMAGE */}
         <Image
           src={siteData.seasonalItems[0].image}
           alt="seasonal"
@@ -97,7 +145,7 @@ export default function SeasonalPage() {
         />
       </section>
 
-      {/* FEATURED PRODUCTS */}
+      {/* SEASONAL ITEMS */}
       <section className="mx-auto max-w-7xl px-4 py-16">
         <SectionHeading
           eyebrow="Available Now"
@@ -130,7 +178,24 @@ export default function SeasonalPage() {
         </div>
       </section>
 
-      {/* PROMO BLOCK */}
+      {/* CORE PRODUCTS (UPDATED WITH CLICK) */}
+      <section className="mx-auto max-w-7xl px-4 py-16">
+        <SectionHeading
+          eyebrow="Always Available"
+          title="Core products and materials"
+          text="These are kept in stock year-round for landscaping, prep work, and ongoing projects."
+        />
+        <p className="mt-6 text-white/70">
+        Click through for more images</p>
+
+        <div className="mt-10 grid gap-6 md:grid-cols-3">
+          {siteData.products.map((item) => (
+            <ProductCard key={item.name} item={item} />
+          ))}
+        </div>
+      </section>
+
+      {/* PROMO */}
       <section className="mx-auto max-w-7xl px-4 py-16">
         <div className="bg-emerald-400/10 border border-emerald-400/20 p-8 rounded-xl">
           <div className="flex items-start gap-3">
@@ -138,14 +203,55 @@ export default function SeasonalPage() {
             <div>
               <h3 className="text-xl font-semibold">Current seasonal promo</h3>
               <p className="text-white/70 mt-2">
-                Keep an eye on this space for rotating seasonal promotions, discounts, and special offers. It’s our way of saying thanks for being part of the Onward & Upward community.
+                Keep an eye on this space for rotating seasonal promotions, discounts, and special offers.
               </p>
             </div>
           </div>
         </div>
       </section>
+      <section className="mx-auto max-w-7xl px-4 py-16">
+  <div className="rounded-[1.5rem] border border-white/10 bg-white/5 p-8 shadow-lg shadow-black/20">
 
-      {/* CONTACT CTA */}
+    <div className="max-w-2xl">
+      <p className="text-sm font-semibold tracking-[0.22em] uppercase text-emerald-300/80">
+        Add-ons & Supplies
+      </p>
+
+      <h2 className="mt-2 text-3xl md:text-4xl font-semibold text-white tracking-tight">
+        Need buckets for your soil?
+      </h2>
+
+      <p className="mt-4 text-white/70 leading-relaxed">
+        We also offer buckets for sale if you’re picking up soil or working on smaller projects. 
+        Easy to transport, reusable, and perfect for garden work, planting, and hauling materials.
+      </p>
+    </div>
+
+    <div className="mt-8 grid gap-6 md:grid-cols-3">
+      <div className="rounded-xl border border-white/10 bg-black/30 p-6">
+        <h3 className="text-lg font-semibold text-white">1 Gallon Pots</h3>
+        <p className="mt-2 text-white/70">$3 each</p>
+      </div>
+
+      <div className="rounded-xl border border-white/10 bg-black/30 p-6">
+        <h3 className="text-lg font-semibold text-white">3 Gallon Pots</h3>
+        <p className="mt-2 text-white/70">$8 each</p>
+      </div>
+
+      <div className="rounded-xl border border-white/10 bg-black/30 p-6">
+        <h3 className="text-lg font-semibold text-white">25 Gallon Pots</h3>
+        <p className="mt-2 text-white/70">$45 each</p>
+      </div>
+    </div>
+
+    <p className="mt-6 text-white/60 text-sm">
+      Ask about availability when ordering soil or request photos if you want to see options.
+    </p>
+
+  </div>
+</section>
+
+      {/* CONTACT */}
       <section className="mx-auto max-w-7xl px-4 py-16">
         <div className="bg-white/5 p-8 rounded-xl">
           <h3 className="text-2xl font-semibold">Need help or want to order?</h3>
@@ -162,10 +268,7 @@ export default function SeasonalPage() {
               Call Now
             </a>
 
-            <Link
-              href="/#contact"
-              className="border px-6 py-3 rounded-full"
-            >
+            <Link href="/#contact" className="border px-6 py-3 rounded-full">
               Contact Form
               <ChevronRight className="inline ml-2 w-4 h-4" />
             </Link>
