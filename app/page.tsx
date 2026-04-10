@@ -44,7 +44,11 @@ function StarRow({ rating }: { rating: number }) {
     </div>
   );
 }
-
+export const metadata = {
+  title: "Landscaping & Excavation Services in Hot Springs, AR",
+  description:
+    "Professional landscaping, excavation, tree removal, and debris cleanup in Hot Springs and surrounding Arkansas communities. Fast quotes and reliable work.",
+};
 export default function HomePage() {
   const phoneLink = `tel:${siteData.contact.phone.replace(/[^\d+]/g, "")}`;
   const mailLink = `mailto:${siteData.contact.email}`;
@@ -69,7 +73,7 @@ export default function HomePage() {
           <nav className="hidden md:flex gap-6 text-sm text-white/70">
             <a href="#services">Services</a>
             <a href="#work">Work</a>
-            <Link href="/seasonal">Seasonal</Link>
+            <Link href="/seasonal">Products</Link>
             <a href="#reviews">Reviews</a>
             <a href="#contact">Contact</a>
           </nav>
@@ -94,7 +98,7 @@ export default function HomePage() {
               Request Quote
             </a>
             <Link href="/seasonal" className="border px-6 py-3 rounded-full">
-              Seasonal
+              Products
             </Link>
           </div>
         </div>
@@ -137,7 +141,67 @@ export default function HomePage() {
           })}
         </div>
       </section>
-      
+      <section className="mx-auto max-w-7xl px-4 py-16">
+  <div className="grid gap-10 md:grid-cols-2 items-center">
+
+    {/* LEFT CONTENT */}
+    <div>
+      <p className="text-sm font-semibold tracking-[0.22em] uppercase text-emerald-300/80">
+        Soil & Materials
+      </p>
+
+      <h2 className="mt-2 text-3xl md:text-4xl font-semibold text-white tracking-tight">
+        Supersoil and garden materials ready to go.
+      </h2>
+
+      <p className="mt-4 text-white/70 leading-relaxed">
+        We offer quality soil blends and materials for everything from small garden projects to full landscape work. 
+        Available for pickup or delivery depending on your needs.
+      </p>
+
+      <div className="mt-6 space-y-3 text-white/70">
+        <p>• Supersoil blends starting around $40–$65 per yard</p>
+        <p>• Supersoil & Compost Blends Available</p>
+        <p>• Pickup or delivery options</p>
+      </div>
+
+      <div className="mt-6 flex gap-4 flex-wrap">
+        <a
+          href="/seasonal"
+          className="bg-emerald-400 text-black px-6 py-3 rounded-full font-semibold"
+        >
+          View Current Availability
+        </a>
+
+        <a
+          href="/#contact"
+          className="border border-white/20 px-6 py-3 rounded-full"
+        >
+          Ask About Soil
+        </a>
+      </div>
+    </div>
+
+    {/* RIGHT IMAGE */}
+    <div className="relative h-[320px] w-full rounded-[1.5rem] overflow-hidden border border-white/10">
+      <Image
+        src="/images/products/supersoil.jpeg"
+        alt="Supersoil blends"
+        fill
+        className="object-cover"
+      />
+
+      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent" />
+
+      <div className="absolute bottom-4 left-4">
+        <span className="rounded-full bg-black/60 px-3 py-1 text-sm text-white backdrop-blur">
+          Call for more info
+        </span>
+      </div>
+    </div>
+
+  </div>
+</section>
 
   
       <section id="work" className="mx-auto max-w-7xl px-4 py-16">
