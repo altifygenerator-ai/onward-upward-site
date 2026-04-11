@@ -1,7 +1,7 @@
 import { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://nwww.onwardsandupward.com/";
+  const baseUrl = "https://onwardsandupward.com/";
 
   return [
     {

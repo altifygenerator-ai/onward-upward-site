@@ -13,7 +13,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.onwardsandupward.com"), // change if needed
+  metadataBase: new URL("https://onwardsandupward.com"),
 
   title: {
     default: "Onward & Upward Services | Landscaping & Excavation in Hot Springs, AR",

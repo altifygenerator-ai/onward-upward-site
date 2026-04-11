@@ -62,7 +62,7 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-[#0d1210] text-white">
 
-      {/* HEADER */}
+      
       <header className="sticky top-0 z-50 border-b border-white/10 bg-[#0d1210]/85 backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 md:px-8">
           <Link href="/" className="flex items-center gap-3">
@@ -84,7 +84,7 @@ export default function HomePage() {
         </div>
       </header>
 
-      {/* HERO */}
+     
       <section className="mx-auto max-w-7xl px-4 py-16 grid md:grid-cols-2 gap-10">
         <div>
           <p className="text-emerald-300">{siteData.hero.eyebrow}</p>
@@ -94,7 +94,7 @@ export default function HomePage() {
           <p className="mt-6 text-white/70">{siteData.hero.body}</p>
 
           <div className="mt-6 flex gap-4">
-            <a href="#quote" className="bg-white text-black px-6 py-3 rounded-full font-semibold">
+            <a href="/#contact" className="bg-white text-black px-6 py-3 rounded-full font-semibold">
               Request Quote
             </a>
             <Link href="/seasonal" className="border px-6 py-3 rounded-full">
@@ -112,7 +112,7 @@ export default function HomePage() {
         />
       </section>
 
-      {/* SERVICES */}
+      
       <section id="services" className="mx-auto max-w-7xl px-4 py-16">
         <SectionHeading
           eyebrow="Services"
@@ -144,7 +144,7 @@ export default function HomePage() {
       <section className="mx-auto max-w-7xl px-4 py-16">
   <div className="grid gap-10 md:grid-cols-2 items-center">
 
-    {/* LEFT CONTENT */}
+   
     <div>
       <p className="text-sm font-semibold tracking-[0.22em] uppercase text-emerald-300/80">
         Soil & Materials
@@ -182,7 +182,7 @@ export default function HomePage() {
       </div>
     </div>
 
-    {/* RIGHT IMAGE */}
+
     <div className="relative h-[320px] w-full rounded-[1.5rem] overflow-hidden border border-white/10">
       <Image
         src="/images/products/supersoil.jpeg"
@@ -224,7 +224,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* SEASONAL PREVIEW */}
+     
       <section className="mx-auto max-w-7xl px-4 py-16">
         <SectionHeading
           eyebrow="Seasonal"
@@ -263,11 +263,11 @@ export default function HomePage() {
     The vision of Onward & Upward Services is to be a driving force for growth, restoration, and community impact—bringing beauty from the ground up and hope to the people we serve. We believe in moving forward with purpose, rising higher with integrity, and making every project a reflection of hard work, heart, and faith.
   </p>
 </section>
-      {/* REVIEWS */}
+     
 <section id="contact" className="mx-auto max-w-7xl px-4 py-16">
   <div className="grid md:grid-cols-2 gap-10">
 
-    {/* LEFT SIDE */}
+    
     <div>
       <h2 className="text-3xl md:text-4xl font-semibold">
         Get in touch
@@ -277,7 +277,7 @@ export default function HomePage() {
         Call, text, or send a message and we’ll get back to you as soon as possible.
       </p>
 
-      {/* MAIN LINE */}
+      
       <div className="mt-6 space-y-3">
         <a
           href={formatPhoneLink(siteData.contact.phone)}
@@ -294,7 +294,7 @@ export default function HomePage() {
         </a>
       </div>
 
-      {/* TEAM CONTACTS */}
+      
       <div className="mt-8 grid md:grid-cols-2 gap-4">
         {siteData.contacts.map((person) => (
           <div
@@ -328,12 +328,12 @@ export default function HomePage() {
       </p>
     </div>
 
-    {/* RIGHT SIDE FORM */}
-    <form
-      action="https://formspree.io/f/YOUR_FORM_ID"
-      method="POST"
-      className="bg-white/5 p-6 rounded-xl space-y-4"
-    >
+   
+   <form
+  action="mailto:rebeccaturner220144@gmail.com"
+  method="POST"
+  encType="text/plain"
+>
       <input
         type="text"
         name="name"
@@ -367,7 +367,7 @@ export default function HomePage() {
   </div>
 </section>
 
-      {/* CONTACT */}
+      
       <section id="contact" className="mx-auto max-w-7xl px-4 py-16">
         <SectionHeading
           eyebrow="Contact"
