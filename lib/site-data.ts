@@ -36,10 +36,10 @@ contacts: [
 ],
 
   hero: {
-    eyebrow: "Garden Season Is Here",
-    headline: "Onward & Upward Services, helping people stay sober and employed",
+    eyebrow: "Get Ready for garden season!",
+    headline: "Onward & Upward Services provides professional landscaping services in Hot Springs, AR.",
     body:
-      "Onwards and upwards is an expression that conveys encouragement to someone to move past a failure or unpleasant experience and look to the future.",
+      "What makes us different is our mission. We’re committed to helping individuals stay sober, rebuild their lives, and find stable work through honest, hands-on service. “Onward and Upward” isn’t just a name, it’s about moving forward, creating opportunities, and building something better for the future.",
     image: "/images/hero.png",
   },
 
@@ -48,16 +48,19 @@ contacts: [
       title: "Landscaping",
       text: "Beds, mulch, cleanup, grading, and full landscape refresh work.",
       image: "/images/services/landscaping2.png",
+      alt:"Landscaping in Hot Springs Ar"
     },
     {
       title: "Excavation",
       text: "Site prep, dirt work, drainage, and property shaping.",
       image: "/images/services/landscaping1.png",
+      alt:"landscaping in hotsprings AR"
     },
     {
       title: "Tree & Debris Removal",
       text: "Storm cleanup, haul-off, and full debris removal.",
       image: "/images/services/removal1.png",
+      alt:"tree and dirt removal in Hot Springs AR"
     },
   ],
 
@@ -66,16 +69,19 @@ contacts: [
       title: "Driveway cleanup",
       before: "/images/gallery/before1.png",
       after: "/images/gallery/after1.png",
+      alt:"driveway cleanup in hot springs Ar"
     },
     {
       title: "Brush cleanup",
       before: "/images/gallery/before3.jpg",
       after: "/images/gallery/after3.jpg",
+      alt:"brush cleanup and landscaping in hot springs ar"
     },
     {
       title: "Seasonal planting",
       before: "/images/gallery/before4.jpg",
       after: "/images/gallery/after4.jpg",
+      alt:"planting in clark county ar"
     },
   ],
 
@@ -86,6 +92,7 @@ contacts: [
         "Seasonal flowers, shrubs, and planting options available now.",
       image: "/images/gallery/plant1.png",
       tag: "Seasonal",
+      alt:"plants available in hot springs ar"
     },
     {
       name: "Soil & mulch",
@@ -93,6 +100,7 @@ contacts: [
         "Supersoil blends, mulch, and bed prep materials available for pickup or delivery.",
       image: "/images/gallery/mulch2.png",
       tag: "Best seller",
+      alt:"soil and much delivery in hot springs ar"
     },
     {
       name: "Garden add-ons",
@@ -100,6 +108,7 @@ contacts: [
         "Containers, edging, and extras to complete your landscape.",
       image: "/images/gallery/plant3.jpg",
       tag: "New",
+      alt:"garden supplies in hot springs ar"
     },
   ],
 seasonalIntro: {
@@ -166,9 +175,9 @@ seasonalIntro: {
       source: "Facebook",
     },
     {
-      name: "Customer name",
+      name: "Your Review Here!",
       quote:
-        "Cleaned everything up perfectly and finished faster than I thought.",
+        "More Revies Coming Soon!",
       image: "/images/reviews/review-3.png",
       source: "Facebook",
     },
