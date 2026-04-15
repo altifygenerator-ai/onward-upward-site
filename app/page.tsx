@@ -263,22 +263,57 @@ export default function HomePage() {
     The vision of Onward & Upward Services is to be a driving force for growth, restoration, and community impact—bringing beauty from the ground up and hope to the people we serve. We believe in moving forward with purpose, rising higher with integrity, and making every project a reflection of hard work, heart, and faith.
   </p>
 </section>
-     
+     <section id="reviews" className="mx-auto max-w-7xl px-4 py-16">
+  <h2 className="text-3xl md:text-4xl font-semibold text-center">
+    What Our Customers Say
+  </h2>
+
+  <p className="mt-4 text-center text-white/70">
+    Real feedback from people we've worked with in Hot Springs and surrounding areas.
+  </p>
+
+  <div className="mt-10 grid gap-6 md:grid-cols-3">
+    {siteData.reviews.map((review, i) => (
+      <div
+        key={i}
+        className="bg-white/5 border border-white/10 rounded-2xl p-6"
+      >
+        {/* IMAGE */}
+        <img
+          src={review.image}
+          alt={`${review.name} review`}
+          className="w-full h-40 object-cover rounded-lg mb-4"
+        />
+
+        {/* TEXT */}
+        <p className="text-white/80">“{review.quote}”</p>
+
+        {/* NAME + SOURCE */}
+        <p className="mt-4 font-semibold text-emerald-300">
+          — {review.name}
+        </p>
+
+        <p className="text-xs text-white/50">{review.source}</p>
+      </div>
+    ))}
+  </div>
+</section>
 <section id="contact" className="mx-auto max-w-7xl px-4 py-16">
-  <div className="grid md:grid-cols-2 gap-10">
-
+  <div className="grid gap-12 lg:grid-cols-2 items-start">
     
-    <div>
-      <h2 className="text-3xl md:text-4xl font-semibold">
-        Get in touch
-      </h2>
+    {/* LEFT */}
+    <div className="space-y-6">
+      <div>
+        <h2 className="text-3xl md:text-4xl font-semibold">
+          Get in touch
+        </h2>
 
-      <p className="mt-4 text-white/70">
-        Call, text, or send a message and we’ll get back to you as soon as possible.
-      </p>
+        <p className="mt-4 text-white/70">
+          Call, text, or send a message and we’ll get back to you as soon as possible.
+        </p>
+      </div>
 
-      
-      <div className="mt-6 space-y-3">
+      <div className="space-y-3">
         <a
           href={formatPhoneLink(siteData.contact.phone)}
           className="block bg-emerald-400 text-black px-6 py-3 rounded-xl font-semibold text-center"
@@ -294,8 +329,7 @@ export default function HomePage() {
         </a>
       </div>
 
-      
-      <div className="mt-8 grid md:grid-cols-2 gap-4">
+      <div className="grid gap-4 sm:grid-cols-2">
         {siteData.contacts.map((person) => (
           <div
             key={person.name}
@@ -323,64 +357,54 @@ export default function HomePage() {
         ))}
       </div>
 
-      <p className="mt-6 text-sm text-white/50">
+      <p className="text-sm text-white/50">
         {siteData.contact.serviceArea}
       </p>
     </div>
 
-   
-   <form
-  action="mailto:rebeccaturner220144@gmail.com"
-  method="POST"
-  encType="text/plain"
->
-      <input
-        type="text"
-        name="name"
-        placeholder="Name"
-        required
-        className="w-full p-3 rounded bg-black/30 border border-white/10"
-      />
-
-      <input
-        type="text"
-        name="contact"
-        placeholder="Phone or Email"
-        required
-        className="w-full p-3 rounded bg-black/30 border border-white/10"
-      />
-
-      <textarea
-        name="details"
-        placeholder="What do you need help with?"
-        rows={4}
-        className="w-full p-3 rounded bg-black/30 border border-white/10"
-      />
-
-      <button
-        type="submit"
-        className="w-full bg-emerald-400 text-black py-3 rounded-full font-semibold"
+    {/* RIGHT */}
+    <div className="bg-white/5 border border-white/10 rounded-2xl p-6">
+      <div className="bg-white/5 border border-white/10 rounded-2xl p-6 lg:mt-8">
+      <form
+        action="mailto:rebeccaturner220144@gmail.com"
+        method="POST"
+        encType="text/plain"
+        className="space-y-4"
       >
-        Send Message
-      </button>
-    </form>
-  </div>
-</section>
-
-      
-      <section id="contact" className="mx-auto max-w-7xl px-4 py-16">
-        <SectionHeading
-          eyebrow="Contact"
-          title="Get in touch"
-          text="Call or message anytime."
+        <input
+          type="text"
+          name="name"
+          placeholder="Name"
+          required
+          className="w-full p-3 rounded bg-black/30 border border-white/10"
         />
 
-        <div className="mt-6 space-y-3">
-          <a href={phoneLink}>{siteData.contact.phone}</a>
-          <br />
-          <a href={mailLink}>{siteData.contact.email}</a>
-        </div>
-      </section>
+        <input
+          type="text"
+          name="contact"
+          placeholder="Phone or Email"
+          required
+          className="w-full p-3 rounded bg-black/30 border border-white/10"
+        />
+
+        <textarea
+          name="details"
+          placeholder="What do you need help with?"
+          rows={4}
+          className="w-full p-3 rounded bg-black/30 border border-white/10"
+        />
+
+        <button
+          type="submit"
+          className="w-full bg-emerald-400 text-black py-3 rounded-full font-semibold"
+        >
+          Send Message
+        </button>
+      </form>
+      </div>
+    </div>
+  </div>
+</section>
     </div>
   );
 }
