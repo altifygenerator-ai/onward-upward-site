@@ -83,26 +83,32 @@ export default function SeasonalPage() {
     <div className="min-h-screen bg-[#0d1210] text-white">
 
       {/* HEADER */}
-      <header className="sticky top-0 z-50 border-b border-white/10 bg-[#0d1210]/85 backdrop-blur-xl">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 md:px-8">
-          <Link href="/" className="flex items-center gap-3">
-            <Image src={siteData.brand.logo} alt="logo" width={40} height={40} />
-            <span className="font-semibold">{siteData.brand.name}</span>
-          </Link>
+    <header className="sticky top-0 z-50 border-b border-white/10 bg-[#0d1210]/85 backdrop-blur-xl">
+  <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 md:px-8">
+    
+    <Link href="/" className="flex items-center gap-3">
+      <Image src={siteData.brand.logo} alt="logo" width={60} height={60} />
+      <span className="font-semibold">{siteData.brand.name}</span>
+    </Link>
 
-          <nav className="hidden md:flex gap-6 text-sm text-white/70">
-            <Link href="/">Home</Link>
-            <a href="/#services">Services</a>
-            <a href="/#work">Work</a>
-            <a href="/#reviews">Reviews</a>
-            <a href="/#contact">Contact</a>
-          </nav>
+    <nav className="hidden md:flex gap-6 text-sm text-white/70">
+      <a href="/#services">Services</a>
+      <a href="/#work">Work</a>
+      <Link href="/seasonal">Products</Link>
+      <a href="/#reviews">Reviews</a>
+      <a href="/#contact">Contact</a>
+      <Link href="/gallery">Gallery</Link>
+    </nav>
 
-          <a href={phoneLink} className="bg-emerald-400 text-black px-4 py-2 rounded-full font-semibold">
-            Call Now
-          </a>
-        </div>
-      </header>
+    <a
+      href={`tel:${siteData.contact.phone.replace(/[^\d+]/g, "")}`}
+      className="bg-emerald-400 text-black px-4 py-2 rounded-full font-semibold"
+    >
+      Call Now
+    </a>
+
+  </div>
+</header>
 
       {/* HERO */}
       <section className="mx-auto max-w-7xl px-4 py-16 grid md:grid-cols-2 gap-10">
@@ -277,9 +283,23 @@ export default function SeasonalPage() {
       </section>
 
       {/* FOOTER */}
-      <footer className="border-t border-white/10 py-6 text-center text-white/50">
-        {siteData.brand.name} · Seasonal Page
-      </footer>
+     <footer className="border-t border-white/10 bg-[#0d1210]">
+  <div className="mx-auto max-w-7xl px-4 py-6 text-center text-sm text-white/60">
+    © {new Date().getFullYear()} {siteData.brand.name}. All rights reserved.
+    
+    <div className="mt-2 text-white/40">
+      Site by{" "}
+      <a
+        href="https://hometownwebservicesar.cc"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="hover:text-emerald-300 transition"
+      >
+        Hometown Web Services AR
+      </a>
+    </div>
+  </div>
+</footer>
     </div>
   );
 }

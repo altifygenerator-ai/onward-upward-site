@@ -40,7 +40,7 @@ contacts: [
     headline: "Onward & Upward Services provides professional landscaping services in Hot Springs, AR.",
     body:
       "What makes us different is our mission. We’re committed to helping individuals stay sober, rebuild their lives, and find stable work through honest, hands-on service. “Onward and Upward” isn’t just a name, it’s about moving forward, creating opportunities, and building something better for the future.",
-    image: "/images/hero.png",
+    image: "/images/gallery/excavator.jpg",
   },
 
   services: [
@@ -48,19 +48,22 @@ contacts: [
       title: "Landscaping",
       text: "Beds, mulch, cleanup, grading, and full landscape refresh work.",
       image: "/images/services/landscaping2.png",
-      alt:"Landscaping in Hot Springs Ar"
+      alt:"Landscaping in Hot Springs Ar",
+      href: "/landscaping-hot-springs-ar",
     },
     {
       title: "Excavation",
       text: "Site prep, dirt work, drainage, and property shaping.",
       image: "/images/services/landscaping1.png",
-      alt:"landscaping in hotsprings AR"
+      alt:"landscaping in hotsprings AR",
+       href: "/excavation-hot-springs-ar",
     },
     {
       title: "Tree & Debris Removal",
       text: "Storm cleanup, haul-off, and full debris removal.",
       image: "/images/services/removal1.png",
-      alt:"tree and dirt removal in Hot Springs AR"
+      alt:"tree and dirt removal in Hot Springs AR",
+       href: "/tree-removal-hot-springs-ar",
     },
   ],
 
@@ -84,6 +87,46 @@ contacts: [
       alt:"planting in clark county ar"
     },
   ],
+  galleryImages: [
+  { src: "/images/gallery/after2.png" },
+  { src: "/images/gallery/after3.jpg" },
+  { src: "/images/gallery/after4.jpg" },
+
+  { src: "/images/gallery/demo1.jpg" },
+  { src: "/images/gallery/demo2.jpg" },
+  { src: "/images/gallery/demo3.jpg" },
+  { src: "/images/gallery/demo4.jpg" },
+  { src: "/images/gallery/demo5.jpg" },
+
+  { src: "/images/gallery/work1.jpg" },
+  { src: "/images/gallery/work2.jpg" },
+  { src: "/images/gallery/work3.jpg" },
+  { src: "/images/gallery/work4.jpg" },
+  { src: "/images/gallery/work5.jpg" },
+  { src: "/images/gallery/work6.jpg" },
+
+  { src: "/images/gallery/treework1.jpg" },
+  { src: "/images/gallery/treework2.jpg" },
+  { src: "/images/gallery/treework3.jpg" },
+
+  { src: "/images/gallery/soil1.png" },
+  { src: "/images/gallery/soil2.jpg" },
+  { src: "/images/gallery/soil3.jpg" },
+  { src: "/images/gallery/soil4.jpg" },
+  { src: "/images/gallery/soil5.jpg" },
+
+  { src: "/images/gallery/mulch1.png" },
+  { src: "/images/gallery/mulch2.png" },
+
+  { src: "/images/gallery/plant1.png" },
+  { src: "/images/gallery/plant2.png" },
+  { src: "/images/gallery/plant3.jpg" },
+
+  { src: "/images/gallery/excavator.jpg" },
+  { src: "/images/gallery/tractorandtruck.jpg" },
+  { src: "/images/gallery/soiltrailer.jpg" },
+  { src: "/images/gallery/supercompsign.jpg" },
+],
 
   seasonalItems: [
     {

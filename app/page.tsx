@@ -76,6 +76,7 @@ export default function HomePage() {
             <Link href="/seasonal">Products</Link>
             <a href="#reviews">Reviews</a>
             <a href="#contact">Contact</a>
+            <Link href="/gallery">Gallery</Link>
           </nav>
 
           <a href={phoneLink} className="bg-emerald-400 text-black px-4 py-2 rounded-full font-semibold">
@@ -103,45 +104,63 @@ export default function HomePage() {
           </div>
         </div>
 
-        <Image
-          src={siteData.hero.image}
-          alt="hero"
-          width={600}
-          height={400}
-          className="rounded-xl object-cover"
-        />
-      </section>
+      <div className="relative h-[550px] w-full rounded-xl overflow-hidden">
+  <Image
+    src={siteData.hero.image}
+    alt="hero"
+    fill
+    className="object-cover"
+  />
+</div>
+</section>
 
       
-      <section id="services" className="mx-auto max-w-7xl px-4 py-16">
-        <SectionHeading
-          eyebrow="Services"
-          title="What we do"
-          text="Clear, simple services with real results."
-        />
+<section id="services" className="mx-auto max-w-7xl px-4 py-16">
+  <SectionHeading
+    eyebrow="Services"
+    title="What we do"
+    text="Clear, simple services with real results."
+  />
 
-        <div className="grid md:grid-cols-3 gap-6 mt-10">
-          {servicesWithIcons.map((service) => {
-            const Icon = service.icon;
-            return (
-              <div key={service.title} className="bg-white/5 p-6 rounded-xl">
-                <Image
-  src={service.image}
-  alt={service.title}
-  width={400}
-  height={300}
-  className="w-full h-[200px] object-cover rounded-lg"
+  <div className="grid md:grid-cols-3 gap-6 mt-10">
+    {servicesWithIcons.map((service) => {
+      const Icon = service.icon;
 
-                />
-                <Icon className="mt-4 text-emerald-300" />
-                <h3 className="mt-4 text-xl font-semibold">{service.title}</h3>
-                <p className="text-white/70 mt-2">{service.text}</p>
-              </div>
-            );
-          })}
+      return (
+        <div key={service.title} className="bg-white/5 p-6 rounded-xl">
+          <Image
+            src={service.image}
+            alt={service.alt}
+            width={400}
+            height={300}
+            className="w-full h-[200px] object-cover rounded-lg"
+          />
+
+          <Icon className="mt-4 text-emerald-300" />
+
+          <h3 className="mt-4 text-xl font-semibold">
+            {service.title}
+          </h3>
+
+          <p className="text-white/70 mt-2">
+            {service.text}
+          </p>
+
+          {service.href && (
+            <Link
+              href={service.href}
+              className="inline-block mt-4 text-sm font-semibold text-emerald-300 hover:text-emerald-200 transition"
+            >
+              Learn more →
+            </Link>
+          )}
         </div>
-      </section>
-      <section className="mx-auto max-w-7xl px-4 py-16">
+      );
+    })}
+  </div>
+</section>
+
+<section className="mx-auto max-w-7xl px-4 py-16">
   <div className="grid gap-10 md:grid-cols-2 items-center">
 
    
@@ -246,6 +265,22 @@ export default function HomePage() {
           View full seasonal →
         </Link>
       </section>
+      <section className="mx-auto max-w-5xl px-4 py-16 text-center">
+  <h2 className="text-2xl md:text-3xl font-semibold">
+    Want to see more of our work?
+  </h2>
+
+  <p className="mt-4 text-white/70">
+    Check out our full gallery for more projects, materials, and recent jobs.
+  </p>
+
+  <Link
+    href="/gallery"
+    className="inline-block mt-6 bg-emerald-400 text-black px-6 py-3 rounded-full font-semibold"
+  >
+    View Full Gallery
+  </Link>
+</section>
 <section className="mx-auto max-w-5xl px-4 py-16 text-center">
   <p className="text-sm uppercase tracking-[0.2em] text-emerald-300/80">
     What we stand for
@@ -401,10 +436,27 @@ export default function HomePage() {
           Send Message
         </button>
       </form>
+      
       </div>
     </div>
   </div>
 </section>
+<footer className="border-t border-white/10 bg-[#0d1210]">
+  <div className="mx-auto max-w-7xl px-4 py-6 text-center text-sm text-white/60">
+    © {new Date().getFullYear()} {siteData.brand.name}. All rights reserved.
+    
+    <div className="mt-2 text-white/40">
+      Site by{" "}
+      <a
+        href="https://hometownwebservicesar.cc"
+        target="_blank"
+        className="hover:text-emerald-300 transition"
+      >
+        Hometown Web Services AR
+      </a>
+    </div>
+  </div>
+</footer>
     </div>
   );
 }
