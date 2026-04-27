@@ -176,4 +176,44 @@ export const siteData = {
       source: "Facebook",
     },
   ],
+  galleryImages: [
+  { src: "/images/gallery/after2.png", alt: "Finished landscaping cleanup in Hot Springs AR" },
+  { src: "/images/gallery/after3.jpg", alt: "Brush cleanup and property work in Hot Springs AR" },
+  { src: "/images/gallery/after4.jpg", alt: "Seasonal planting and landscaping in Arkansas" },
+
+  { src: "/images/gallery/demo1.jpg", alt: "Property cleanup project in Central Arkansas" },
+  { src: "/images/gallery/demo2.jpg", alt: "Outdoor cleanup and landscaping work" },
+  { src: "/images/gallery/demo3.jpg", alt: "Landscaping project near Hot Springs Arkansas" },
+  { src: "/images/gallery/demo4.jpg", alt: "Yard cleanup and property improvement" },
+  { src: "/images/gallery/demo5.jpg", alt: "Local landscaping and cleanup work" },
+
+  { src: "/images/gallery/work1.jpg", alt: "Landscape work in Hot Springs AR" },
+  { src: "/images/gallery/work2.jpg", alt: "Excavation and property work in Arkansas" },
+  { src: "/images/gallery/work3.jpg", alt: "Outdoor property cleanup work" },
+  { src: "/images/gallery/work4.jpg", alt: "Landscaping and dirt work project" },
+  { src: "/images/gallery/work5.jpg", alt: "Property work and cleanup project" },
+  { src: "/images/gallery/work6.jpg", alt: "Local outdoor cleanup and landscaping" },
+
+  { src: "/images/gallery/treework1.jpg", alt: "Tree removal work in Hot Springs AR" },
+  { src: "/images/gallery/treework2.jpg", alt: "Tree and debris cleanup in Central Arkansas" },
+  { src: "/images/gallery/treework3.jpg", alt: "Tree cleanup and haul off service" },
+
+  { src: "/images/gallery/soil1.png", alt: "Soil delivery in Hot Springs AR" },
+  { src: "/images/gallery/soil2.jpg", alt: "Bulk soil for landscaping projects" },
+  { src: "/images/gallery/soil3.jpg", alt: "Garden soil and landscape materials" },
+  { src: "/images/gallery/soil4.jpg", alt: "Soil material available for delivery" },
+  { src: "/images/gallery/soil5.jpg", alt: "Supersoil and garden material in Arkansas" },
+
+  { src: "/images/gallery/mulch1.png", alt: "Mulch delivery in Hot Springs AR" },
+  { src: "/images/gallery/mulch2.png", alt: "Mulch and landscape material delivery" },
+
+  { src: "/images/gallery/plant1.png", alt: "Plants available in Hot Springs AR" },
+  { src: "/images/gallery/plant2.png", alt: "Seasonal flowers and plants in Arkansas" },
+  { src: "/images/gallery/plant3.jpg", alt: "Garden plants and landscaping supplies" },
+
+  { src: "/images/gallery/excavator.jpg", alt: "Excavation services in Hot Springs AR" },
+  { src: "/images/gallery/tractorandtruck.jpg", alt: "Tractor and truck for property services" },
+  { src: "/images/gallery/soiltrailer.jpg", alt: "Soil trailer and material delivery" },
+  { src: "/images/gallery/supercompsign.jpg", alt: "Supersoil compost sign in Hot Springs AR" },
+],
 };
