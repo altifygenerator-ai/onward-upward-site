@@ -1,69 +1,65 @@
-type Product = {
-  name: string;
-  price: string;
-  note: string;
-  description: string;
-  images: [string, ...string[]];
-};
-
-
 export const siteData = {
   brand: {
     name: "Onward & Upward Services",
     tagline:
-      "Landscaping, excavation, and tree/debris removal for Hot Springs and nearby communities.",
+      "Landscaping, excavation, and tree & debris removal in Hot Springs, AR and surrounding communities.",
     logo: "/images/logo.png",
   },
 
   contact: {
-  phone: "(501) 446-0376",
-  email: "rebeccaturner220144@gmail.com",
-  address: "1499 Amity Rd, Hot Springs, AR 71913",
-  serviceArea: "Hot Springs, Glenwood, and surrounding Arkansas communities",
-},
-
-contacts: [
-  {
-    name: "Justyn Sheets",
-    role: "For quotes & job questions",
     phone: "(501) 446-0376",
+    email: "rebeccaturner220144@gmail.com",
+    address: "1499 Amity Rd, Hot Springs, AR 71913",
+    serviceArea:
+      "Hot Springs, Glenwood, and surrounding Central Arkansas communities",
   },
-  {
-    name: "Rebecca Turner",
-    role: "For scheduling & availability",
-    phone: "(620) 687-1126",
-  },
-],
+
+  contacts: [
+    {
+      name: "Justyn Sheets",
+      role: "Quotes & job questions",
+      phone: "(501) 446-0376",
+    },
+    {
+      name: "Rebecca Turner",
+      role: "Scheduling & availability",
+      phone: "(620) 687-1126",
+    },
+  ],
 
   hero: {
-    eyebrow: "Get Ready for garden season!",
-    headline: "Onward & Upward Services provides professional landscaping services in Hot Springs, AR.",
+    eyebrow: "Get ready for garden season",
+    headline:
+      "Landscaping, excavation, and tree removal services in Hot Springs, AR",
     body:
-      "What makes us different is our mission. We’re committed to helping individuals stay sober, rebuild their lives, and find stable work through honest, hands-on service. “Onward and Upward” isn’t just a name, it’s about moving forward, creating opportunities, and building something better for the future.",
+      "We handle landscaping, excavation, drainage, and cleanup work across Hot Springs and surrounding Arkansas communities. What makes us different is our mission — helping individuals stay sober, rebuild their lives, and earn through honest, hands-on work. “Onward and Upward” isn’t just a name, it’s about building something better for the future.",
     image: "/images/gallery/excavator.jpg",
   },
 
   services: [
     {
       title: "Landscaping",
-      text: "Beds, mulch, cleanup, grading, and full landscape refresh work.",
+      text:
+        "Landscape beds, mulch, cleanup, grading, and full property refresh services in Hot Springs, AR.",
       image: "/images/services/landscaping2.png",
-      alt:"Landscaping in Hot Springs Ar",
+      alt: "Landscaping services in Hot Springs AR",
       href: "/landscaping-hot-springs-ar",
     },
     {
       title: "Excavation",
-      text: "Site prep, dirt work, drainage, and property shaping.",
+      text:
+        "Site prep, dirt work, drainage solutions, and property shaping for residential and commercial jobs.",
       image: "/images/services/landscaping1.png",
-      alt:"landscaping in hotsprings AR",
-       href: "/excavation-hot-springs-ar",
+      alt: "Excavation and dirt work in Hot Springs AR",
+      href: "/excavation-hot-springs-ar",
     },
     {
       title: "Tree & Debris Removal",
-      text: "Storm cleanup, haul-off, and full debris removal.",
+      text:
+        "Tree removal, storm cleanup, haul-off, and full debris removal across Central Arkansas.",
       image: "/images/services/removal1.png",
-      alt:"tree and dirt removal in Hot Springs AR",
-       href: "/tree-removal-hot-springs-ar",
+      alt: "Tree removal and debris cleanup in Hot Springs AR",
+      href: "/tree-removal-hot-springs-ar",
     },
   ],
 
@@ -72,70 +68,30 @@ contacts: [
       title: "Driveway cleanup",
       before: "/images/gallery/before1.png",
       after: "/images/gallery/after1.png",
-      alt:"driveway cleanup in hot springs Ar"
+      alt: "Driveway cleanup and grading in Hot Springs AR",
     },
     {
       title: "Brush cleanup",
       before: "/images/gallery/before3.jpg",
       after: "/images/gallery/after3.jpg",
-      alt:"brush cleanup and landscaping in hot springs ar"
+      alt: "Brush clearing and landscaping in Hot Springs AR",
     },
     {
       title: "Seasonal planting",
       before: "/images/gallery/before4.jpg",
       after: "/images/gallery/after4.jpg",
-      alt:"planting in clark county ar"
+      alt: "Seasonal planting and landscaping in Arkansas",
     },
   ],
-  galleryImages: [
-  { src: "/images/gallery/after2.png" },
-  { src: "/images/gallery/after3.jpg" },
-  { src: "/images/gallery/after4.jpg" },
-
-  { src: "/images/gallery/demo1.jpg" },
-  { src: "/images/gallery/demo2.jpg" },
-  { src: "/images/gallery/demo3.jpg" },
-  { src: "/images/gallery/demo4.jpg" },
-  { src: "/images/gallery/demo5.jpg" },
-
-  { src: "/images/gallery/work1.jpg" },
-  { src: "/images/gallery/work2.jpg" },
-  { src: "/images/gallery/work3.jpg" },
-  { src: "/images/gallery/work4.jpg" },
-  { src: "/images/gallery/work5.jpg" },
-  { src: "/images/gallery/work6.jpg" },
-
-  { src: "/images/gallery/treework1.jpg" },
-  { src: "/images/gallery/treework2.jpg" },
-  { src: "/images/gallery/treework3.jpg" },
-
-  { src: "/images/gallery/soil1.png" },
-  { src: "/images/gallery/soil2.jpg" },
-  { src: "/images/gallery/soil3.jpg" },
-  { src: "/images/gallery/soil4.jpg" },
-  { src: "/images/gallery/soil5.jpg" },
-
-  { src: "/images/gallery/mulch1.png" },
-  { src: "/images/gallery/mulch2.png" },
-
-  { src: "/images/gallery/plant1.png" },
-  { src: "/images/gallery/plant2.png" },
-  { src: "/images/gallery/plant3.jpg" },
-
-  { src: "/images/gallery/excavator.jpg" },
-  { src: "/images/gallery/tractorandtruck.jpg" },
-  { src: "/images/gallery/soiltrailer.jpg" },
-  { src: "/images/gallery/supercompsign.jpg" },
-],
 
   seasonalItems: [
     {
       name: "Featured plants",
       description:
-        "Seasonal flowers, shrubs, and planting options available now.",
+        "Seasonal flowers, shrubs, and planting options available in Hot Springs and surrounding areas.",
       image: "/images/gallery/plant1.png",
       tag: "Seasonal",
-      alt:"plants available in hot springs ar"
+      alt: "Plants available in Hot Springs AR",
     },
     {
       name: "Soil & mulch",
@@ -143,75 +99,71 @@ contacts: [
         "Supersoil blends, mulch, and bed prep materials available for pickup or delivery.",
       image: "/images/gallery/mulch2.png",
       tag: "Best seller",
-      alt:"soil and much delivery in hot springs ar"
+      alt: "Soil and mulch delivery in Hot Springs AR",
     },
     {
       name: "Garden add-ons",
       description:
-        "Containers, edging, and extras to complete your landscape.",
+        "Containers, edging, and extras to complete your landscape projects.",
       image: "/images/gallery/plant3.jpg",
       tag: "New",
-      alt:"garden supplies in hot springs ar"
+      alt: "Garden supplies in Hot Springs AR",
     },
   ],
-seasonalIntro: {
-  eyebrow: "More than just seasonal",
-  title: "Products that stay available all year.",
-  body:
-    "Some materials rotate with the season, but others stay available for ongoing projects, cleanup, and landscape work.",
-},
 
+  seasonalIntro: {
+    eyebrow: "More than just seasonal",
+    title: "Products available year-round",
+    body:
+      "Some materials rotate with the season, but many stay available year-round for ongoing projects, cleanup, and landscape work.",
+  },
 
   products: [
-  {
-    name: "Compost & Manure Blend",
-    price: "$40 / yard",
-    note: "Pickup or delivery",
-    description:
-      "Premium soil blends for gardens, beds, and landscape projects. Great for ongoing use and bigger installs.",
-    images: [
-  "/images/products/compostandmanure.jpeg",
-  "/images/products/compostandmanure2.jpeg",
-  
+    {
+      name: "Compost & Manure Blend",
+      price: "$40 / yard",
+      note: "Pickup or delivery",
+      description:
+        "Premium soil blend for gardens, beds, and landscaping projects across Central Arkansas.",
+      images: [
+        "/images/products/compostandmanure.jpeg",
+        "/images/products/compostandmanure2.jpeg",
+      ],
+    },
+    {
+      name: "Compost, Manure & Sandy Loam Blend",
+      price: "$45 / yard",
+      note: "Available year-round",
+      description:
+        "Versatile soil mix ideal for landscaping, grading, and general property work.",
+      images: [
+        "/images/products/compmanloam.jpeg",
+        "/images/products/compmanloam2.jpeg",
+      ],
+    },
+    {
+      name: "Supersoil Blend",
+      price: "$65 / yard",
+      note: "Project-based material",
+      description:
+        "Heavy-duty soil blend for driveways, drainage, grading, and site prep projects.",
+      images: [
+        "/images/products/supersoil.jpeg",
+        "/images/products/supersoil2.jpeg",
+      ],
+    },
   ],
-  },
-  {
-    name: "Compost, Manure & Sandy Loam Blend",
-    price: "$45 / yard",
-    note: "Available year-round",
-    description:
-      "Clean mulch options for moisture control, weed suppression, and a finished landscape look.",
-    images: [
-  "/images/products/compmanloam.jpeg",
-  "/images/products/compmanloam2.jpeg",
-  
-    ],
-  },
-  
-  {
-    name: "Supersoil Blend",
-    price: "$65 / yard",
-    note: "Project-based material",
-    description:
-      "Helpful for driveways, drainage, grading, and site prep. Perfect for larger property work.",
-    images: [
-  "/images/products/supersoil.jpeg",
-  "/images/products/supersoil2.jpeg",
-  
-    ],
-  },
 
-],
   reviews: [
     {
-      name: "Tom",
+      name: "Tom — Hot Springs, AR",
       quote:
-        "I really apprecate honesty and good folks, they have it.",
+        "I really appreciate honesty and good folks, they have it.",
       image: "/images/reviews/review1.png",
       source: "Facebook",
     },
     {
-      name: "Crystal",
+      name: "Crystal — Central Arkansas",
       quote:
         "Super easy to work with and very fair pricing. Definitely recommend.",
       image: "/images/reviews/review2.png",
@@ -219,8 +171,7 @@ seasonalIntro: {
     },
     {
       name: "Your Review Here!",
-      quote:
-        "More Revies Coming Soon!",
+      quote: "More reviews coming soon!",
       image: "/images/reviews/review-3.png",
       source: "Facebook",
     },
