@@ -345,23 +345,69 @@ export default function ExcavationHotSpringsPage() {
         </div>
       </section>
 
-      <footer className="border-t border-white/10 bg-[#0d1210]">
-        <div className="mx-auto max-w-7xl px-4 py-6 text-center text-sm text-white/60">
-          © {new Date().getFullYear()} {siteData.brand.name}. All rights reserved.
+   <footer className="border-t border-white/10 bg-[#0d1210]">
+  <div className="mx-auto max-w-7xl px-4 py-10 grid md:grid-cols-3 gap-8 text-sm text-white/70">
 
-          <div className="mt-2 text-white/40">
-            Site by{" "}
-            <a
-              href="https://hometownwebservicesar.cc"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-emerald-300 transition"
-            >
-              Hometown Web Services AR
-            </a>
-          </div>
-        </div>
-      </footer>
+    {/* BRAND */}
+    <div>
+      <p className="font-semibold text-white">{siteData.brand.name}</p>
+      <p className="mt-3 text-white/60">
+        Landscaping, excavation, tree removal, and cleanup services for
+        Hot Springs and surrounding Arkansas communities.
+      </p>
+    </div>
+
+    {/* SERVICES */}
+    <div>
+      <p className="font-semibold text-white mb-3">Services</p>
+      <div className="flex flex-col gap-2">
+        <Link href="/landscaping-hot-springs-ar" className="hover:text-emerald-300">
+          Landscaping Hot Springs AR
+        </Link>
+        <Link href="/excavation-hot-springs-ar" className="hover:text-emerald-300">
+          Excavation Hot Springs AR
+        </Link>
+        <Link href="/tree-removal-hot-springs-ar" className="hover:text-emerald-300">
+          Tree Removal Hot Springs AR
+        </Link>
+        <Link href="/seasonal" className="hover:text-emerald-300">
+          Mulch, Soil & Products
+        </Link>
+      </div>
+    </div>
+
+    {/* AREAS */}
+    <div>
+      <p className="font-semibold text-white mb-3">Areas We Serve</p>
+      <div className="flex flex-col gap-2">
+        <span>Hot Springs, AR</span>
+        <span>Benton, AR</span>
+        <span>Bryant, AR</span>
+        <span>Malvern, AR</span>
+        <span>Glenwood, AR</span>
+        <span>Arkadelphia, AR</span>
+      </div>
+    </div>
+
+  </div>
+
+  {/* BOTTOM */}
+  <div className="border-t border-white/10 py-6 text-center text-xs text-white/50">
+    © {new Date().getFullYear()} {siteData.brand.name}. All rights reserved.
+
+    <div className="mt-2">
+      Site by{" "}
+      <a
+        href="https://hometownwebservicesar.cc"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="hover:text-emerald-300 transition"
+      >
+        Hometown Web Services AR
+      </a>
+    </div>
+  </div>
+</footer>
     </div>
   );
 }
