@@ -19,9 +19,9 @@ function SectionHeading({ eyebrow, title, text }: any) {
 }
 
 export const metadata = {
-  title: "Tree Removal & Cleanup in Hot Springs, AR | Onward & Upward",
+  title: "Tree Removal, Land Clearing & Cleanup in Hot Springs, AR | Onward & Upward",
   description:
-    "Tree removal, brush clearing, storm cleanup, and debris hauling in Hot Springs, AR. Fast response and reliable cleanup work.",
+    "Tree removal, land clearing, brush cutting, excavation, and storm cleanup in Hot Springs, Benton, Bryant, Malvern, Glenwood, Arkadelphia, and surrounding Arkansas areas. Fast, reliable service.",
 };
 
 export default function TreeRemovalHotSpringsPage() {
@@ -70,9 +70,10 @@ export default function TreeRemovalHotSpringsPage() {
           </h1>
 
           <p className="mt-6 text-white/70 leading-relaxed">
-            We handle tree removal, brush clearing, storm cleanup, and debris
-            hauling for properties around Hot Springs and surrounding Arkansas areas.
-            Whether it’s a fallen tree or overgrown land, we get it cleaned up and under control.
+            We handle tree removal, land clearing, brush cutting, storm cleanup, and debris
+            hauling for properties in Hot Springs, Benton, Bryant, Malvern, Glenwood, Arkadelphia,
+            and surrounding Arkansas areas. Whether it’s a fallen tree, overgrown land, or full property cleanup,
+            we get it cleared and under control.
           </p>
 
           <div className="mt-6 flex gap-4 flex-wrap">
@@ -89,7 +90,7 @@ export default function TreeRemovalHotSpringsPage() {
         <div className="relative h-[420px] w-full rounded-xl overflow-hidden border border-white/10">
           <Image
             src="/images/gallery/treework1.jpg"
-            alt="tree removal in Hot Springs Arkansas"
+            alt="tree removal and land clearing in Hot Springs AR"
             fill
             className="object-cover"
           />
@@ -101,7 +102,7 @@ export default function TreeRemovalHotSpringsPage() {
         <SectionHeading
           eyebrow="Tree & Cleanup"
           title="Clearing, hauling, and getting properties cleaned up"
-          text="We take care of the heavy work so you don’t have to — from tree removal to full debris cleanup."
+          text="We take care of the heavy work so you don’t have to — from tree removal and land clearing to full debris cleanup."
         />
 
         <div className="grid md:grid-cols-3 gap-6 mt-10">
@@ -132,19 +133,20 @@ export default function TreeRemovalHotSpringsPage() {
         <div className="grid gap-10 md:grid-cols-2 items-center">
           <div>
             <h2 className="text-3xl md:text-4xl font-semibold">
-              Tree removal, brush clearing, and debris hauling.
+              Tree removal, land clearing, and debris hauling.
             </h2>
 
             <p className="mt-4 text-white/70 leading-relaxed">
-              From storm damage to overgrown areas, we help restore properties by removing trees,
-              clearing brush, and hauling off debris. We focus on getting the job done safely and efficiently.
+              From storm damage to overgrown areas, we help restore properties with tree removal,
+              land clearing, brush cutting, and debris hauling. Whether you need cleanup after a storm
+              or full clearing for a project, we focus on getting the job done safely and efficiently.
             </p>
 
             <div className="mt-6 grid gap-3 text-white/70">
               <p className="flex gap-2"><CheckCircle2 className="text-emerald-300" /> Tree removal and cutting</p>
               <p className="flex gap-2"><CheckCircle2 className="text-emerald-300" /> Brush clearing and overgrowth removal</p>
               <p className="flex gap-2"><CheckCircle2 className="text-emerald-300" /> Storm cleanup and debris hauling</p>
-              <p className="flex gap-2"><CheckCircle2 className="text-emerald-300" /> Property cleanup and restoration</p>
+              <p className="flex gap-2"><CheckCircle2 className="text-emerald-300" /> Property cleanup and land clearing</p>
             </div>
           </div>
 
@@ -162,17 +164,18 @@ export default function TreeRemovalHotSpringsPage() {
       {/* LOCAL */}
       <section className="mx-auto max-w-5xl px-4 py-16">
         <h2 className="text-3xl md:text-4xl font-semibold">
-          Tree removal and cleanup in Hot Springs and nearby areas.
+          Tree removal and land clearing in Hot Springs and nearby areas.
         </h2>
 
         <p className="mt-6 text-white/70 leading-relaxed">
-          We serve Hot Springs, Glenwood, and surrounding Arkansas communities with tree removal,
-          brush clearing, and debris cleanup services.
+          We serve Hot Springs, Benton, Bryant, Malvern, Glenwood, Arkadelphia,
+          and surrounding central Arkansas communities with tree removal, land clearing,
+          brush cutting, and debris cleanup services.
         </p>
 
         <p className="mt-6 text-white/60 leading-relaxed">
-          If you’re searching for tree removal in Hot Springs, AR, brush cleanup, storm cleanup,
-          or debris hauling, Onward & Upward Services is ready to help.
+          If you’re searching for tree removal in Hot Springs, AR, land clearing near Benton,
+          brush cleanup in Bryant, or storm cleanup in Malvern, Onward & Upward Services is ready to help.
         </p>
       </section>
 
@@ -205,11 +208,11 @@ export default function TreeRemovalHotSpringsPage() {
       <section id="contact" className="mx-auto max-w-7xl px-4 py-16">
         <div className="text-center max-w-2xl mx-auto">
           <h2 className="text-3xl font-semibold">
-            Need tree removal or cleanup?
+            Need tree removal or land clearing?
           </h2>
 
           <p className="mt-4 text-white/70">
-            Call or message us and we’ll get you taken care of.
+            Call or message us and we’ll get your property cleaned up.
           </p>
 
           <div className="mt-6 flex justify-center gap-4 flex-wrap">

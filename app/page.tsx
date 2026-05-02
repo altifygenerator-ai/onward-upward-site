@@ -44,11 +44,13 @@ function StarRow({ rating }: { rating: number }) {
     </div>
   );
 }
+
 export const metadata = {
-  title: "Landscaping & Excavation Services in Hot Springs, AR",
+  title: "Landscaping, Excavation & Tree Removal in Hot Springs, AR | Onward & Upward",
   description:
-    "Professional landscaping, excavation, tree removal, and debris cleanup in Hot Springs and surrounding Arkansas communities. Fast quotes and reliable work.",
+    "Landscaping, excavation, tree removal, land clearing, mulch, soil delivery, grading, brush cleanup, and debris hauling in Hot Springs, Benton, Bryant, Malvern, Glenwood, Arkadelphia, and surrounding Arkansas areas.",
 };
+
 export default function HomePage() {
   const phoneLink = `tel:${siteData.contact.phone.replace(/[^\d+]/g, "")}`;
   const mailLink = `mailto:${siteData.contact.email}`;
@@ -66,7 +68,7 @@ export default function HomePage() {
       <header className="sticky top-0 z-50 border-b border-white/10 bg-[#0d1210]/85 backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 md:px-8">
           <Link href="/" className="flex items-center gap-3">
-            <Image src={siteData.brand.logo} alt="logo" width={60} height={60} />
+            <Image src={siteData.brand.logo} alt="Onward & Upward Services logo" width={60} height={60} />
             <span className="font-semibold">{siteData.brand.name}</span>
           </Link>
 
@@ -90,9 +92,14 @@ export default function HomePage() {
         <div>
           <p className="text-emerald-300">{siteData.hero.eyebrow}</p>
           <h1 className="text-4xl md:text-6xl font-semibold mt-4">
-            {siteData.hero.headline}
+            Landscaping, Excavation & Tree Removal in Hot Springs, AR
           </h1>
-          <p className="mt-6 text-white/70">{siteData.hero.body}</p>
+          <p className="mt-6 text-white/70">
+            Onward & Upward Services provides landscaping, excavation, tree removal,
+            land clearing, grading, brush cleanup, mulch, soil delivery, and debris hauling
+            for properties in Hot Springs, Benton, Bryant, Malvern, Glenwood, Arkadelphia,
+            and surrounding Arkansas areas.
+          </p>
 
           <div className="mt-6 flex gap-4">
             <a href="/#contact" className="bg-white text-black px-6 py-3 rounded-full font-semibold">
@@ -107,7 +114,7 @@ export default function HomePage() {
       <div className="relative h-[550px] w-full rounded-xl overflow-hidden">
   <Image
     src={siteData.hero.image}
-    alt="hero"
+    alt="landscaping excavation and tree removal work in Hot Springs Arkansas"
     fill
     className="object-cover"
   />
@@ -118,8 +125,8 @@ export default function HomePage() {
 <section id="services" className="mx-auto max-w-7xl px-4 py-16">
   <SectionHeading
     eyebrow="Services"
-    title="What we do"
-    text="Clear, simple services with real results."
+    title="Landscaping, excavation, tree work, and cleanup"
+    text="Clear, practical outdoor services for Hot Springs and nearby areas — from mulch and soil to grading, land clearing, brush cleanup, and debris hauling."
   />
 
   <div className="grid md:grid-cols-3 gap-6 mt-10">
@@ -170,18 +177,19 @@ export default function HomePage() {
       </p>
 
       <h2 className="mt-2 text-3xl md:text-4xl font-semibold text-white tracking-tight">
-        Supersoil and garden materials ready to go.
+        Supersoil, garden soil, mulch, and landscape materials.
       </h2>
 
       <p className="mt-4 text-white/70 leading-relaxed">
-        We offer quality soil blends and materials for everything from small garden projects to full landscape work. 
-        Available for pickup or delivery depending on your needs.
+        We offer quality soil blends, compost, mulch, and landscaping materials for everything
+        from small garden projects to full landscape work. Available for pickup or delivery
+        in Hot Springs and surrounding Arkansas areas depending on your needs.
       </p>
 
       <div className="mt-6 space-y-3 text-white/70">
         <p>• Supersoil blends starting around $40–$65 per yard</p>
-        <p>• Supersoil & Compost Blends Available</p>
-        <p>• Pickup or delivery options</p>
+        <p>• Supersoil, compost, mulch, and garden soil available</p>
+        <p>• Pickup or delivery options around Hot Springs and nearby areas</p>
       </div>
 
       <div className="mt-6 flex gap-4 flex-wrap">
@@ -204,8 +212,8 @@ export default function HomePage() {
 
     <div className="relative h-[320px] w-full rounded-[1.5rem] overflow-hidden border border-white/10">
       <Image
-        src="/images/products/supersoil.jpeg"
-        alt="Supersoil blends"
+        src="/images/gallery/soil6.jpg"
+        alt="supersoil garden soil and mulch materials in Hot Springs AR"
         fill
         className="object-cover"
       />
@@ -226,8 +234,8 @@ export default function HomePage() {
       <section id="work" className="mx-auto max-w-7xl px-4 py-16">
         <SectionHeading
           eyebrow="Work"
-          title="Before & After"
-          text="See the difference."
+          title="Before & After Landscaping and Cleanup Work"
+          text="See the difference from real landscaping, tree work, land clearing, and property cleanup projects."
         />
 
         <div className="grid md:grid-cols-3 gap-6 mt-10">
@@ -235,8 +243,8 @@ export default function HomePage() {
             <div key={item.title}>
               <h3 className="mb-3">{item.title}</h3>
               <div className="grid grid-cols-2 gap-2">
-                <Image src={item.before} alt="before" width={200} height={150} className="w-full h-[200px] object-cover rounded-lg" />
-                <Image src={item.after} alt="after" width={200} height={150} className="w-full h-[200px] object-cover rounded-lg" />
+                <Image src={item.before} alt={`before ${item.alt} in Hot Springs Arkansas`} width={200} height={150} className="w-full h-[200px] object-cover rounded-lg" />
+                <Image src={item.after} alt={`after ${item.alt} in Hot Springs Arkansas`} width={200} height={150} className="w-full h-[200px] object-cover rounded-lg" />
               </div>
             </div>
           ))}
@@ -247,14 +255,14 @@ export default function HomePage() {
       <section className="mx-auto max-w-7xl px-4 py-16">
         <SectionHeading
           eyebrow="Seasonal"
-          title="Featured Products"
-          text="What’s available right now."
+          title="Featured Mulch, Soil, Plants, and Products"
+          text="Current landscaping materials, plants, soil, mulch, and seasonal products available now."
         />
 
         <div className="grid md:grid-cols-3 gap-6 mt-10">
           {siteData.seasonalItems.map((item) => (
             <div key={item.name} className="bg-white/5 p-6 rounded-xl">
-              <Image src={item.image} alt={item.name} width={400} height={200} className="w-full h-[200px] object-cover rounded-lg" />
+              <Image src={item.image} alt={`${item.name} available in Hot Springs AR`} width={400} height={200} className="w-full h-[200px] object-cover rounded-lg" />
               <h3 className="mt-4 font-semibold">{item.name}</h3>
               <p className="text-white/70">{item.description}</p>
             </div>
@@ -267,11 +275,12 @@ export default function HomePage() {
       </section>
       <section className="mx-auto max-w-5xl px-4 py-16 text-center">
   <h2 className="text-2xl md:text-3xl font-semibold">
-    Want to see more of our work?
+    Want to see more local landscaping and cleanup work?
   </h2>
 
   <p className="mt-4 text-white/70">
-    Check out our full gallery for more projects, materials, and recent jobs.
+    Check out our full gallery for more landscaping projects, tree work, land clearing,
+    materials, and recent jobs around Hot Springs and surrounding Arkansas areas.
   </p>
 
   <Link
@@ -287,20 +296,20 @@ export default function HomePage() {
   </p>
 
   <h2 className="mt-3 text-3xl md:text-4xl font-semibold">
-    Built on faith, work, and doing things right.
+    Built on faith, honest work, and serving the Hot Springs community.
   </h2>
 
   <p className="mt-6 text-white/70 leading-relaxed">
-   The mission of Onward & Upward Services is to uplift and strengthen our community through honest work, quality service, and products that bring life, growth, and transformation. We are called to serve with faith, excellence, and compassion—helping build a better community one yard at a time.
+   The mission of Onward & Upward Services is to uplift and strengthen our community through honest work, quality landscaping, excavation, cleanup, and products that bring life, growth, and transformation. We are called to serve with faith, excellence, and compassion—helping build a better community one yard at a time.
   </p>
 
   <p className="mt-6 text-white/60 leading-relaxed">
-    The vision of Onward & Upward Services is to be a driving force for growth, restoration, and community impact—bringing beauty from the ground up and hope to the people we serve. We believe in moving forward with purpose, rising higher with integrity, and making every project a reflection of hard work, heart, and faith.
+    The vision of Onward & Upward Services is to be a driving force for growth, restoration, and community impact—bringing beauty from the ground up and hope to the people we serve. We believe in moving forward with purpose, rising higher with integrity, and making every landscaping, excavation, and cleanup project a reflection of hard work, heart, and faith.
   </p>
 </section>
      <section id="reviews" className="mx-auto max-w-7xl px-4 py-16">
   <h2 className="text-3xl md:text-4xl font-semibold text-center">
-    What Our Customers Say
+    What Our Landscaping Customers Say
   </h2>
 
   <p className="mt-4 text-center text-white/70">
@@ -316,7 +325,7 @@ export default function HomePage() {
         {/* IMAGE */}
         <img
           src={review.image}
-          alt={`${review.name} review`}
+          alt={`${review.name} landscaping review in Hot Springs AR`}
           className="w-full h-40 object-cover rounded-lg mb-4"
         />
 
@@ -340,11 +349,12 @@ export default function HomePage() {
     <div className="space-y-6">
       <div>
         <h2 className="text-3xl md:text-4xl font-semibold">
-          Get in touch
+          Get a quote in Hot Springs
         </h2>
 
         <p className="mt-4 text-white/70">
-          Call, text, or send a message and we’ll get back to you as soon as possible.
+          Call, text, or send a message for landscaping, excavation, tree removal,
+          land clearing, mulch, soil delivery, grading, brush cleanup, or debris hauling.
         </p>
       </div>
 
@@ -424,7 +434,7 @@ export default function HomePage() {
 
         <textarea
           name="details"
-          placeholder="What do you need help with?"
+          placeholder="What kind of landscaping, excavation, tree removal, mulch, soil, grading, or cleanup work do you need?"
           rows={4}
           className="w-full p-3 rounded bg-black/30 border border-white/10"
         />

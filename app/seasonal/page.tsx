@@ -27,13 +27,11 @@ function SectionHeading({ eyebrow, title, text }: any) {
   );
 }
 
-/* ✅ NEW: Product Card with click-through images */
 function ProductCard({ item }: { item: any }) {
   const [index, setIndex] = useState(0);
 
   return (
     <div className="flex h-full flex-col overflow-hidden rounded-[1.5rem] border border-white/10 bg-white/5 shadow-lg shadow-black/20">
-      {/* IMAGE */}
       <div
         className="relative h-[220px] w-full cursor-pointer hover:opacity-90 transition"
         onClick={() =>
@@ -42,22 +40,19 @@ function ProductCard({ item }: { item: any }) {
       >
         <Image
           src={item.images[index]}
-          alt={item.name}
+          alt={`${item.name} in Hot Springs AR`}
           fill
           className="object-cover"
         />
 
-        {/* OVERLAY */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent" />
 
-        {/* NOTE */}
         <div className="absolute left-4 top-4">
           <span className="rounded-full border border-emerald-400/20 bg-emerald-400/10 px-3 py-1 text-xs font-medium text-emerald-100 backdrop-blur">
             {item.note}
           </span>
         </div>
 
-        {/* PRICE */}
         <div className="absolute bottom-4 left-4">
           <span className="rounded-full bg-black/60 px-3 py-1 text-sm font-semibold text-white backdrop-blur">
             {item.price}
@@ -65,7 +60,6 @@ function ProductCard({ item }: { item: any }) {
         </div>
       </div>
 
-      {/* CONTENT */}
       <div className="flex flex-1 flex-col p-6">
         <h3 className="text-xl font-semibold text-white">{item.name}</h3>
         <p className="mt-3 flex-grow text-white/70 leading-relaxed">
@@ -83,48 +77,49 @@ export default function SeasonalPage() {
     <div className="min-h-screen bg-[#0d1210] text-white">
 
       {/* HEADER */}
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-[#0d1210]/85 backdrop-blur-xl">
-  <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 md:px-8">
-    
-    <Link href="/" className="flex items-center gap-3">
-      <Image src={siteData.brand.logo} alt="logo" width={60} height={60} />
-      <span className="font-semibold">{siteData.brand.name}</span>
-    </Link>
+      <header className="sticky top-0 z-50 border-b border-white/10 bg-[#0d1210]/85 backdrop-blur-xl">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 md:px-8">
+          
+          <Link href="/" className="flex items-center gap-3">
+            <Image src={siteData.brand.logo} alt="logo" width={60} height={60} />
+            <span className="font-semibold">{siteData.brand.name}</span>
+          </Link>
 
-    <nav className="hidden md:flex gap-6 text-sm text-white/70">
-      <a href="/#services">Services</a>
-      <a href="/#work">Work</a>
-      <Link href="/seasonal">Products</Link>
-      <a href="/#reviews">Reviews</a>
-      <a href="/#contact">Contact</a>
-      <Link href="/gallery">Gallery</Link>
-    </nav>
+          <nav className="hidden md:flex gap-6 text-sm text-white/70">
+            <a href="/#services">Services</a>
+            <a href="/#work">Work</a>
+            <Link href="/seasonal">Products</Link>
+            <a href="/#reviews">Reviews</a>
+            <a href="/#contact">Contact</a>
+            <Link href="/gallery">Gallery</Link>
+          </nav>
 
-    <a
-      href={`tel:${siteData.contact.phone.replace(/[^\d+]/g, "")}`}
-      className="bg-emerald-400 text-black px-4 py-2 rounded-full font-semibold"
-    >
-      Call Now
-    </a>
+          <a
+            href={phoneLink}
+            className="bg-emerald-400 text-black px-4 py-2 rounded-full font-semibold"
+          >
+            Call Now
+          </a>
 
-  </div>
-</header>
+        </div>
+      </header>
 
       {/* HERO */}
       <section className="mx-auto max-w-7xl px-4 py-16 grid md:grid-cols-2 gap-10">
         <div>
           <p className="text-emerald-300 flex items-center gap-2">
             <CalendarDays className="w-4 h-4" />
-            Seasonal Features
+            Seasonal Materials & Products
           </p>
 
           <h1 className="text-4xl md:text-6xl font-semibold mt-4">
-            Plants, soil, mulch, and what’s available right now.
+            Mulch, soil, plants, and landscaping materials in Hot Springs, AR
           </h1>
 
           <p className="mt-6 text-white/70">
-            This page is updated as the season changes. Check here for current plant availability,
-            featured products, and garden season specials.
+            This page is updated as the season changes. Check here for mulch delivery,
+            topsoil, garden soil, plants, and landscaping materials available in
+            Hot Springs, Benton, Bryant, Malvern, and surrounding Arkansas areas.
           </p>
 
           <div className="mt-6 flex gap-4 flex-wrap">
@@ -144,7 +139,7 @@ export default function SeasonalPage() {
 
         <Image
           src={siteData.seasonalItems[0].image}
-          alt="seasonal"
+          alt="mulch and soil delivery Hot Springs AR"
           width={600}
           height={400}
           className="rounded-xl object-cover"
@@ -155,8 +150,8 @@ export default function SeasonalPage() {
       <section className="mx-auto max-w-7xl px-4 py-16">
         <SectionHeading
           eyebrow="Available Now"
-          title="Seasonal products and features"
-          text="Rotating items based on availability. This keeps things fresh without clutter."
+          title="Seasonal plants, soil, and landscaping materials"
+          text="Rotating availability of plants, mulch, soil, and seasonal landscaping products for properties in Hot Springs and surrounding Arkansas areas."
         />
 
         <div className="grid md:grid-cols-3 gap-6 mt-10">
@@ -164,7 +159,7 @@ export default function SeasonalPage() {
             <div key={item.name} className="bg-white/5 p-6 rounded-xl">
               <Image
                 src={item.image}
-                alt={item.name}
+                alt={`${item.name} Hot Springs AR`}
                 width={400}
                 height={250}
                 className="rounded-lg object-cover"
@@ -184,15 +179,16 @@ export default function SeasonalPage() {
         </div>
       </section>
 
-      {/* CORE PRODUCTS (UPDATED WITH CLICK) */}
+      {/* CORE PRODUCTS */}
       <section className="mx-auto max-w-7xl px-4 py-16">
         <SectionHeading
           eyebrow="Always Available"
-          title="Core products and materials"
-          text="These are kept in stock year-round for landscaping, prep work, and ongoing projects."
+          title="Mulch, soil, and landscaping materials year-round"
+          text="We keep core materials in stock year-round for landscaping, land prep, grading, and ongoing outdoor projects."
         />
         <p className="mt-6 text-white/70">
-        Click through for more images</p>
+          Click through for more images
+        </p>
 
         <div className="mt-10 grid gap-6 md:grid-cols-3">
           {siteData.products.map((item) => (
@@ -207,62 +203,65 @@ export default function SeasonalPage() {
           <div className="flex items-start gap-3">
             <Sparkles className="text-emerald-300" />
             <div>
-              <h3 className="text-xl font-semibold">Current seasonal promo</h3>
+              <h3 className="text-xl font-semibold">Seasonal deals on mulch, soil, and plants</h3>
               <p className="text-white/70 mt-2">
-                Keep an eye on this space for rotating seasonal promotions, discounts, and special offers.
+                Keep an eye on this space for seasonal discounts on mulch delivery,
+                topsoil, plants, and landscaping materials in Hot Springs and nearby areas.
               </p>
             </div>
           </div>
         </div>
       </section>
+
+      {/* ADD-ONS */}
       <section className="mx-auto max-w-7xl px-4 py-16">
-  <div className="rounded-[1.5rem] border border-white/10 bg-white/5 p-8 shadow-lg shadow-black/20">
+        <div className="rounded-[1.5rem] border border-white/10 bg-white/5 p-8 shadow-lg shadow-black/20">
 
-    <div className="max-w-2xl">
-      <p className="text-sm font-semibold tracking-[0.22em] uppercase text-emerald-300/80">
-        Add-ons & Supplies
-      </p>
+          <div className="max-w-2xl">
+            <p className="text-sm font-semibold tracking-[0.22em] uppercase text-emerald-300/80">
+              Add-ons & Supplies
+            </p>
 
-      <h2 className="mt-2 text-3xl md:text-4xl font-semibold text-white tracking-tight">
-        Need buckets for your soil?
-      </h2>
+            <h2 className="mt-2 text-3xl md:text-4xl font-semibold text-white tracking-tight">
+              Buckets and containers for soil and landscaping work
+            </h2>
 
-      <p className="mt-4 text-white/70 leading-relaxed">
-        We also offer buckets for sale if you’re picking up soil or working on smaller projects. 
-        Easy to transport, reusable, and perfect for garden work, planting, and hauling materials.
-      </p>
-    </div>
+            <p className="mt-4 text-white/70 leading-relaxed">
+              We offer containers for soil pickup, mulch transport, and smaller landscaping projects.
+              Great for garden work, planting, and hauling materials.
+            </p>
+          </div>
 
-    <div className="mt-8 grid gap-6 md:grid-cols-3">
-      <div className="rounded-xl border border-white/10 bg-black/30 p-6">
-        <h3 className="text-lg font-semibold text-white">1 Gallon Pots</h3>
-        <p className="mt-2 text-white/70">$3 each</p>
-      </div>
+          <div className="mt-8 grid gap-6 md:grid-cols-3">
+            <div className="rounded-xl border border-white/10 bg-black/30 p-6">
+              <h3 className="text-lg font-semibold text-white">1 Gallon Pots</h3>
+              <p className="mt-2 text-white/70">$3 each</p>
+            </div>
 
-      <div className="rounded-xl border border-white/10 bg-black/30 p-6">
-        <h3 className="text-lg font-semibold text-white">3 Gallon Pots</h3>
-        <p className="mt-2 text-white/70">$8 each</p>
-      </div>
+            <div className="rounded-xl border border-white/10 bg-black/30 p-6">
+              <h3 className="text-lg font-semibold text-white">3 Gallon Pots</h3>
+              <p className="mt-2 text-white/70">$8 each</p>
+            </div>
 
-      <div className="rounded-xl border border-white/10 bg-black/30 p-6">
-        <h3 className="text-lg font-semibold text-white">25 Gallon Pots</h3>
-        <p className="mt-2 text-white/70">$45 each</p>
-      </div>
-    </div>
+            <div className="rounded-xl border border-white/10 bg-black/30 p-6">
+              <h3 className="text-lg font-semibold text-white">25 Gallon Pots</h3>
+              <p className="mt-2 text-white/70">$45 each</p>
+            </div>
+          </div>
 
-    <p className="mt-6 text-white/60 text-sm">
-      Ask about availability when ordering soil or request photos if you want to see options.
-    </p>
+          <p className="mt-6 text-white/60 text-sm">
+            Ask about availability when ordering soil, mulch, or delivery services.
+          </p>
 
-  </div>
-</section>
+        </div>
+      </section>
 
       {/* CONTACT */}
       <section className="mx-auto max-w-7xl px-4 py-16">
         <div className="bg-white/5 p-8 rounded-xl">
-          <h3 className="text-2xl font-semibold">Need help or want to order?</h3>
+          <h3 className="text-2xl font-semibold">Need mulch, soil, or delivery?</h3>
           <p className="text-white/70 mt-2">
-            Call or message to check availability, schedule delivery, or ask questions.
+            Call or message to check availability, schedule delivery, or ask about landscaping materials.
           </p>
 
           <div className="mt-6 flex gap-4 flex-wrap">
@@ -283,23 +282,23 @@ export default function SeasonalPage() {
       </section>
 
       {/* FOOTER */}
-     <footer className="border-t border-white/10 bg-[#0d1210]">
-  <div className="mx-auto max-w-7xl px-4 py-6 text-center text-sm text-white/60">
-    © {new Date().getFullYear()} {siteData.brand.name}. All rights reserved.
-    
-    <div className="mt-2 text-white/40">
-      Site by{" "}
-      <a
-        href="https://hometownwebservicesar.cc"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="hover:text-emerald-300 transition"
-      >
-        Hometown Web Services AR
-      </a>
-    </div>
-  </div>
-</footer>
+      <footer className="border-t border-white/10 bg-[#0d1210]">
+        <div className="mx-auto max-w-7xl px-4 py-6 text-center text-sm text-white/60">
+          © {new Date().getFullYear()} {siteData.brand.name}. All rights reserved.
+          
+          <div className="mt-2 text-white/40">
+            Site by{" "}
+            <a
+              href="https://hometownwebservicesar.cc"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-emerald-300 transition"
+            >
+              Hometown Web Services AR
+            </a>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }

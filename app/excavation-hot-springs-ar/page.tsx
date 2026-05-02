@@ -19,9 +19,9 @@ function SectionHeading({ eyebrow, title, text }: any) {
 }
 
 export const metadata = {
-  title: "Excavation Services in Hot Springs, AR | Onward & Upward Services",
+  title: "Excavation, Dirt Work & Grading in Hot Springs, AR | Onward & Upward",
   description:
-    "Excavation services in Hot Springs, AR including dirt work, site prep, grading, drainage help, property shaping, and cleanup.",
+    "Excavation services in Hot Springs, AR including dirt work, grading, drainage help, site prep, land clearing, property shaping, and cleanup in Benton, Bryant, Malvern, Glenwood, Arkadelphia, and nearby areas.",
 };
 
 export default function ExcavationHotSpringsPage() {
@@ -70,8 +70,9 @@ export default function ExcavationHotSpringsPage() {
 
           <p className="mt-6 text-white/70 leading-relaxed">
             Onward & Upward Services provides excavation, dirt work, grading,
-            drainage help, site prep, and property shaping for homeowners and
-            small projects around Hot Springs and nearby Arkansas communities.
+            drainage help, site prep, land clearing, and property shaping for homeowners
+            and small projects around Hot Springs, Benton, Bryant, Malvern, Glenwood,
+            Arkadelphia, and nearby Arkansas communities.
           </p>
 
           <div className="mt-6 flex gap-4 flex-wrap">
@@ -88,7 +89,7 @@ export default function ExcavationHotSpringsPage() {
         <div className="relative h-[420px] w-full rounded-xl overflow-hidden border border-white/10">
           <Image
             src={siteData.services[1].image}
-            alt="excavation services in Hot Springs Arkansas"
+            alt="excavation dirt work and grading in Hot Springs Arkansas"
             fill
             className="object-cover"
           />
@@ -98,8 +99,8 @@ export default function ExcavationHotSpringsPage() {
       <section id="services" className="mx-auto max-w-7xl px-4 py-16">
         <SectionHeading
           eyebrow="Local Excavation"
-          title="Dirt work and property prep done right"
-          text="From grading and drainage help to site prep and cleanup, we handle practical excavation work that helps your property function better."
+          title="Dirt work, grading, drainage, and property prep"
+          text="From grading and drainage help to site prep, land clearing, and cleanup, we handle practical excavation work that helps your property function better."
         />
 
         <div className="grid md:grid-cols-3 gap-6 mt-10">
@@ -133,28 +134,28 @@ export default function ExcavationHotSpringsPage() {
             </p>
 
             <h2 className="mt-2 text-3xl md:text-4xl font-semibold text-white tracking-tight">
-              Grading, drainage, site prep, and property shaping.
+              Grading, drainage, site prep, dirt work, and property shaping.
             </h2>
 
             <p className="mt-4 text-white/70 leading-relaxed">
               Excavation work does not always have to mean a huge commercial job.
               We help with smaller property projects too — shaping land, cleaning
-              up rough areas, helping with drainage, prepping spaces, and moving
-              material where it needs to go.
+              up rough areas, helping with drainage, prepping spaces, land clearing,
+              and moving material where it needs to go.
             </p>
 
             <div className="mt-6 grid gap-3 text-white/70">
               <p className="flex gap-2"><CheckCircle2 className="text-emerald-300 shrink-0" /> Dirt work and property shaping</p>
               <p className="flex gap-2"><CheckCircle2 className="text-emerald-300 shrink-0" /> Site prep for outdoor projects</p>
               <p className="flex gap-2"><CheckCircle2 className="text-emerald-300 shrink-0" /> Drainage and grading help</p>
-              <p className="flex gap-2"><CheckCircle2 className="text-emerald-300 shrink-0" /> Cleanup after digging or clearing</p>
+              <p className="flex gap-2"><CheckCircle2 className="text-emerald-300 shrink-0" /> Cleanup after digging, grading, or clearing</p>
             </div>
           </div>
 
           <div className="relative h-[320px] w-full rounded-[1.5rem] overflow-hidden border border-white/10">
             <Image
               src="/images/gallery/excavator.jpg"
-              alt="excavation equipment in Hot Springs AR"
+              alt="excavation equipment for dirt work and grading in Hot Springs AR"
               fill
               className="object-cover"
             />
@@ -180,23 +181,25 @@ export default function ExcavationHotSpringsPage() {
         </h2>
 
         <p className="mt-6 text-white/70 leading-relaxed">
-          We serve Hot Springs, Glenwood, and surrounding Arkansas communities
-          with excavation, grading, site prep, cleanup, and practical outdoor
+          We serve Hot Springs, Benton, Bryant, Malvern, Glenwood, Arkadelphia,
+          and surrounding central Arkansas communities with excavation, grading,
+          site prep, drainage help, land clearing, cleanup, and practical outdoor
           property work.
         </p>
 
         <p className="mt-6 text-white/60 leading-relaxed">
-          If you are searching for excavation in Hot Springs, AR, dirt work,
-          grading, drainage help, or property prep, Onward & Upward Services can
-          help get the job moving.
+          If you are searching for excavation in Hot Springs, AR, dirt work near Benton,
+          grading in Bryant, drainage help in Malvern, site prep in Glenwood, or
+          property prep around central Arkansas, Onward & Upward Services can help
+          get the job moving.
         </p>
       </section>
 
       <section id="work" className="mx-auto max-w-7xl px-4 py-16">
         <SectionHeading
           eyebrow="Recent Work"
-          title="Real Work Photos"
-          text="See recent cleanup, property work, and outdoor projects from the area."
+          title="Real Excavation, Cleanup, and Property Work Photos"
+          text="See recent excavation, dirt work, cleanup, grading, land clearing, and outdoor projects from the area."
         />
 
         <div className="grid md:grid-cols-3 gap-6 mt-10">
@@ -206,7 +209,7 @@ export default function ExcavationHotSpringsPage() {
               <div className="grid grid-cols-2 gap-2">
                 <Image
                   src={item.before}
-                  alt={`before ${item.alt}`}
+                  alt={`before ${item.alt} in Hot Springs Arkansas`}
                   width={200}
                   height={150}
                   className="w-full h-[200px] object-cover rounded-lg"
@@ -214,7 +217,7 @@ export default function ExcavationHotSpringsPage() {
 
                 <Image
                   src={item.after}
-                  alt={`after ${item.alt}`}
+                  alt={`after ${item.alt} in Hot Springs Arkansas`}
                   width={200}
                   height={150}
                   className="w-full h-[200px] object-cover rounded-lg"
@@ -235,13 +238,13 @@ export default function ExcavationHotSpringsPage() {
         </p>
 
         <h2 className="mt-3 text-3xl md:text-4xl font-semibold">
-          Honest work with a bigger mission.
+          Honest excavation work with a bigger mission.
         </h2>
 
         <p className="mt-6 text-white/70 leading-relaxed">
           Onward & Upward Services is built around faith, hard work, and helping
           people move forward. The mission is not just excavation — it is doing
-          good work, creating opportunity, and serving the community with integrity.
+          good work, creating opportunity, and serving the Hot Springs community with integrity.
         </p>
       </section>
 
@@ -254,7 +257,8 @@ export default function ExcavationHotSpringsPage() {
               </h2>
 
               <p className="mt-4 text-white/70">
-                Call, text, or send a message and we’ll get back to you as soon as possible.
+                Call, text, or send a message for excavation, dirt work, grading,
+                drainage help, site prep, land clearing, or property shaping.
               </p>
             </div>
 
@@ -324,7 +328,7 @@ export default function ExcavationHotSpringsPage() {
 
                 <textarea
                   name="details"
-                  placeholder="Tell us what kind of excavation or dirt work you need."
+                  placeholder="Tell us what kind of excavation, dirt work, grading, drainage, site prep, or land clearing you need."
                   rows={4}
                   className="w-full p-3 rounded bg-black/30 border border-white/10"
                 />

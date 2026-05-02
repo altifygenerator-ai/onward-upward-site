@@ -3,9 +3,9 @@ import Link from "next/link";
 import { siteData } from "@/lib/site-data";
 
 export const metadata = {
-  title: "Project Gallery | Onward & Upward Services",
+  title: "Landscaping, Tree Removal & Cleanup Gallery in Hot Springs, AR | Onward & Upward",
   description:
-    "See real landscaping, excavation, and cleanup work from Hot Springs, AR and surrounding areas.",
+    "See real landscaping, tree removal, land clearing, excavation, mulch, soil, and cleanup work from Hot Springs, Benton, Bryant, Malvern, Glenwood, Arkadelphia, and surrounding Arkansas areas.",
 };
 
 export default function GalleryPage() {
@@ -44,20 +44,21 @@ export default function GalleryPage() {
         </p>
 
         <h1 className="mt-3 text-4xl md:text-5xl font-semibold">
-          Project Gallery
+          Landscaping, Tree Removal & Cleanup Gallery
         </h1>
 
         <p className="mt-4 text-white/70 max-w-xl">
           Real project photos, before and after results, landscaping work,
-          cleanup jobs, materials, and equipment from around Hot Springs and
-          surrounding Arkansas communities.
+          tree removal, land clearing, brush cleanup, debris hauling, mulch,
+          soil, materials, and equipment from around Hot Springs, Benton,
+          Bryant, Malvern, Glenwood, Arkadelphia, and surrounding Arkansas communities.
         </p>
       </section>
 
       {/* BEFORE & AFTER */}
       <section className="mx-auto max-w-7xl px-4 pb-16">
         <h2 className="text-2xl md:text-3xl font-semibold">
-          Before & After
+          Before & After Landscaping and Cleanup Work
         </h2>
 
         <div className="grid md:grid-cols-3 gap-10 mt-8">
@@ -69,7 +70,7 @@ export default function GalleryPage() {
                 <div className="relative group overflow-hidden rounded-xl border border-white/10">
                   <Image
                     src={item.before}
-                    alt={`Before ${item.alt}`}
+                    alt={`Before ${item.alt} in Hot Springs Arkansas`}
                     width={300}
                     height={200}
                     className="w-full h-[200px] object-cover group-hover:scale-105 transition duration-500"
@@ -83,7 +84,7 @@ export default function GalleryPage() {
                 <div className="relative group overflow-hidden rounded-xl border border-white/10">
                   <Image
                     src={item.after}
-                    alt={`After ${item.alt}`}
+                    alt={`After ${item.alt} in Hot Springs Arkansas`}
                     width={300}
                     height={200}
                     className="w-full h-[200px] object-cover group-hover:scale-105 transition duration-500"
@@ -102,12 +103,13 @@ export default function GalleryPage() {
       {/* FULL GALLERY */}
       <section className="mx-auto max-w-7xl px-4 pb-20">
         <h2 className="text-2xl md:text-3xl font-semibold">
-          More Project Photos
+          More Landscaping, Tree Work, and Property Cleanup Photos
         </h2>
 
         <p className="mt-3 text-white/70 max-w-xl">
-          A closer look at recent landscaping, cleanup, materials, and property
-          work.
+          A closer look at recent landscaping, tree removal, land clearing,
+          brush cleanup, mulch, soil, materials, and outdoor property work
+          across Hot Springs and nearby Arkansas areas.
         </p>
 
         <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 mt-8">
@@ -118,7 +120,7 @@ export default function GalleryPage() {
             >
               <Image
                 src={image.src}
-                alt={`Onward & Upward Services project photo ${i + 1}`}
+                alt={`Onward & Upward landscaping tree removal and cleanup project photo ${i + 1} in Hot Springs AR`}
                 width={500}
                 height={350}
                 className="w-full h-[260px] object-cover group-hover:scale-105 transition duration-500"
@@ -132,7 +134,8 @@ export default function GalleryPage() {
         <h2 className="text-3xl font-semibold">Like what you see?</h2>
 
         <p className="mt-4 text-white/70">
-          Let’s talk about your project and get you a quote.
+          Let’s talk about your landscaping, tree removal, land clearing,
+          cleanup, mulch, soil, or outdoor property project and get you a quote.
         </p>
 
         <a

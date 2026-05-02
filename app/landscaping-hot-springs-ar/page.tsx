@@ -19,9 +19,9 @@ function SectionHeading({ eyebrow, title, text }: any) {
 }
 
 export const metadata = {
-  title: "Landscaping Services in Hot Springs, AR | Onward & Upward Services",
+  title: "Landscaping, Mulch & Yard Cleanup in Hot Springs, AR | Onward & Upward",
   description:
-    "Professional landscaping services in Hot Springs, AR including mulch, flower beds, cleanup, grading, soil, debris removal, and property refresh work.",
+    "Landscaping services in Hot Springs, AR including mulch installation, soil delivery, flower bed cleanup, grading, brush clearing, debris removal, and property refresh work in Benton, Bryant, Malvern, Glenwood, and nearby areas.",
 };
 
 export default function LandscapingHotSpringsPage() {
@@ -69,9 +69,10 @@ export default function LandscapingHotSpringsPage() {
           </h1>
 
           <p className="mt-6 text-white/70 leading-relaxed">
-            Onward & Upward Services provides landscaping, cleanup, mulch, soil,
-            bed refreshes, grading, and outdoor property work for homeowners and
-            properties around Hot Springs and nearby Arkansas communities.
+            Onward & Upward Services provides landscaping, yard cleanup, mulch installation,
+            soil delivery, flower bed refreshes, grading, brush clearing, debris removal,
+            and outdoor property work for homeowners and properties around Hot Springs,
+            Benton, Bryant, Malvern, Glenwood, Arkadelphia, and nearby Arkansas communities.
           </p>
 
           <div className="mt-6 flex gap-4 flex-wrap">
@@ -88,7 +89,7 @@ export default function LandscapingHotSpringsPage() {
         <div className="relative h-[420px] w-full rounded-xl overflow-hidden border border-white/10">
           <Image
             src={siteData.hero.image}
-            alt="landscaping services in Hot Springs Arkansas"
+            alt="landscaping services and yard cleanup in Hot Springs Arkansas"
             fill
             className="object-cover"
           />
@@ -98,8 +99,8 @@ export default function LandscapingHotSpringsPage() {
       <section id="services" className="mx-auto max-w-7xl px-4 py-16">
         <SectionHeading
           eyebrow="Local Landscaping"
-          title="Landscaping work built around your property"
-          text="Whether you need a full yard refresh or just help getting things cleaned up, we handle practical outdoor work that makes the property look better and function better."
+          title="Landscaping, cleanup, and outdoor property work"
+          text="Whether you need a full yard refresh, mulch installed, brush cleared, soil delivered, or help getting the property cleaned up, we handle practical outdoor work that makes your place look better and function better."
         />
 
         <div className="grid md:grid-cols-3 gap-6 mt-10">
@@ -133,18 +134,18 @@ export default function LandscapingHotSpringsPage() {
             </p>
 
             <h2 className="mt-2 text-3xl md:text-4xl font-semibold text-white tracking-tight">
-              Yard cleanup, beds, soil, mulch, grading, and more.
+              Yard cleanup, mulch, soil, grading, brush clearing, and more.
             </h2>
 
             <p className="mt-4 text-white/70 leading-relaxed">
               We help with common landscaping needs around Hot Springs including
-              property cleanups, flower beds, mulch installation, soil work,
-              light grading, debris removal, and getting outdoor areas back under control.
+              property cleanups, flower bed refreshes, mulch installation, topsoil and garden soil,
+              light grading, brush clearing, debris removal, and getting outdoor areas back under control.
             </p>
 
             <div className="mt-6 grid gap-3 text-white/70">
               <p className="flex gap-2"><CheckCircle2 className="text-emerald-300 shrink-0" /> Landscape bed cleanup and refreshes</p>
-              <p className="flex gap-2"><CheckCircle2 className="text-emerald-300 shrink-0" /> Mulch, soil, and material work</p>
+              <p className="flex gap-2"><CheckCircle2 className="text-emerald-300 shrink-0" /> Mulch, topsoil, garden soil, and material work</p>
               <p className="flex gap-2"><CheckCircle2 className="text-emerald-300 shrink-0" /> Brush, tree, and debris cleanup</p>
               <p className="flex gap-2"><CheckCircle2 className="text-emerald-300 shrink-0" /> Small grading and property shaping</p>
             </div>
@@ -153,7 +154,7 @@ export default function LandscapingHotSpringsPage() {
           <div className="relative h-[320px] w-full rounded-[1.5rem] overflow-hidden border border-white/10">
             <Image
               src="/images/products/supersoil.jpeg"
-              alt="soil and landscaping materials in Hot Springs AR"
+              alt="topsoil garden soil and landscaping materials in Hot Springs AR"
               fill
               className="object-cover"
             />
@@ -179,15 +180,17 @@ export default function LandscapingHotSpringsPage() {
         </h2>
 
         <p className="mt-6 text-white/70 leading-relaxed">
-          We serve Hot Springs, Glenwood, and surrounding Arkansas communities.
-          From small cleanup jobs to bigger landscape refreshes, the goal is
-          simple: show up, do honest work, and leave the property better than we found it.
+          We serve Hot Springs, Benton, Bryant, Malvern, Glenwood, Arkadelphia,
+          and surrounding central Arkansas communities. From small cleanup jobs
+          to bigger landscape refreshes, the goal is simple: show up, do honest work,
+          and leave the property better than we found it.
         </p>
 
         <p className="mt-6 text-white/60 leading-relaxed">
-          If you are searching for landscaping in Hot Springs, AR, yard cleanup,
-          mulch installation, soil delivery, brush cleanup, or outdoor property
-          work, this is the kind of work we built Onward & Upward Services around.
+          If you are searching for landscaping in Hot Springs, AR, yard cleanup near Benton,
+          mulch installation in Bryant, soil delivery in Malvern, brush cleanup in Glenwood,
+          or outdoor property work around central Arkansas, this is the kind of work we built
+          Onward & Upward Services around.
         </p>
       </section>
 
@@ -195,7 +198,7 @@ export default function LandscapingHotSpringsPage() {
         <SectionHeading
           eyebrow="Recent Work"
           title="Before & After Landscaping Results"
-          text="Real work photos help show what can be done on local properties."
+          text="Real landscaping, cleanup, brush clearing, and property refresh photos from local work in Hot Springs and surrounding Arkansas areas."
         />
 
         <div className="grid md:grid-cols-3 gap-6 mt-10">
@@ -234,19 +237,19 @@ export default function LandscapingHotSpringsPage() {
         </p>
 
         <h2 className="mt-3 text-3xl md:text-4xl font-semibold">
-          Honest work with a bigger mission.
+          Honest landscaping work with a bigger mission.
         </h2>
 
         <p className="mt-6 text-white/70 leading-relaxed">
           Onward & Upward Services is built around faith, hard work, and helping
           people move forward. The mission is not just landscaping — it is doing
-          good work, creating opportunity, and serving the community with integrity.
+          good work, creating opportunity, and serving the Hot Springs community with integrity.
         </p>
       </section>
 
       <section id="reviews" className="mx-auto max-w-7xl px-4 py-16">
         <h2 className="text-3xl md:text-4xl font-semibold text-center">
-          What Our Customers Say
+          What Our Landscaping Customers Say
         </h2>
 
         <p className="mt-4 text-center text-white/70">
@@ -258,7 +261,7 @@ export default function LandscapingHotSpringsPage() {
             <div key={i} className="bg-white/5 border border-white/10 rounded-2xl p-6">
               <img
                 src={review.image}
-                alt={`${review.name} review`}
+                alt={`${review.name} landscaping review`}
                 className="w-full h-40 object-cover rounded-lg mb-4"
               />
 
@@ -283,7 +286,8 @@ export default function LandscapingHotSpringsPage() {
               </h2>
 
               <p className="mt-4 text-white/70">
-                Call, text, or send a message and we’ll get back to you as soon as possible.
+                Call, text, or send a message for landscaping, mulch, soil delivery,
+                cleanup, grading, brush clearing, or outdoor property work.
               </p>
             </div>
 
@@ -353,7 +357,7 @@ export default function LandscapingHotSpringsPage() {
 
                 <textarea
                   name="details"
-                  placeholder="Tell us what kind of landscaping or cleanup work you need."
+                  placeholder="Tell us what kind of landscaping, mulch, soil, cleanup, grading, or brush clearing work you need."
                   rows={4}
                   className="w-full p-3 rounded bg-black/30 border border-white/10"
                 />

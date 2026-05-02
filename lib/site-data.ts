@@ -33,7 +33,7 @@ export const siteData = {
       "Landscaping, excavation, and tree removal services in Hot Springs, AR",
     body:
       "We handle landscaping, excavation, drainage, and cleanup work across Hot Springs and surrounding Arkansas communities. What makes us different is our mission — helping individuals stay sober, rebuild their lives, and earn through honest, hands-on work. “Onward and Upward” isn’t just a name, it’s about building something better for the future.",
-    image: "/images/gallery/excavator.jpg",
+    image: "/images/gallery/worktruck.jpg",
   },
 
   services: [
