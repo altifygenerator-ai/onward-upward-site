@@ -1,44 +1,43 @@
-import { MetadataRoute } from "next";
+import type { MetadataRoute } from "next";
+import { areaPages, servicePages, siteUrl } from "@/lib/site-data";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://onwardsandupward.com";
+  const now = new Date();
 
-  return [
+  const staticRoutes: MetadataRoute.Sitemap = [
     {
-      url: baseUrl,
-      lastModified: new Date(),
+      url: siteUrl,
+      lastModified: now,
       changeFrequency: "weekly",
       priority: 1,
     },
     {
-      url: `${baseUrl}/landscaping-hot-springs-ar`,
-      lastModified: new Date(),
+      url: `${siteUrl}/gallery`,
+      lastModified: now,
       changeFrequency: "monthly",
-      priority: 0.9,
+      priority: 0.72,
     },
     {
-      url: `${baseUrl}/excavation-hot-springs-ar`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/tree-removal-hot-springs-ar`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/seasonal`,
-      lastModified: new Date(),
+      url: `${siteUrl}/seasonal`,
+      lastModified: now,
       changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/gallery`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
+      priority: 0.82,
     },
   ];
+
+  const serviceRoutes: MetadataRoute.Sitemap = Object.keys(servicePages).map((slug) => ({
+    url: `${siteUrl}/${slug}`,
+    lastModified: now,
+    changeFrequency: "monthly" as const,
+    priority: slug === "landscaping-hot-springs-ar" ? 0.92 : 0.86,
+  }));
+
+  const areaRoutes: MetadataRoute.Sitemap = Object.keys(areaPages).map((slug) => ({
+    url: `${siteUrl}/service-areas/${slug}`,
+    lastModified: now,
+    changeFrequency: "monthly" as const,
+    priority: slug === "hot-springs-ar" ? 0.84 : 0.74,
+  }));
+
+  return [...staticRoutes, ...serviceRoutes, ...areaRoutes];
 }

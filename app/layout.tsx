@@ -1,121 +1,85 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Inter, Playfair_Display } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-sans",
-});
-
-const playfair = Playfair_Display({
-  subsets: ["latin"],
-  variable: "--font-display",
-});
+import { siteData, siteUrl } from "@/lib/site-data";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://onwardsandupward.com"),
-
+  metadataBase: new URL(siteUrl),
   title: {
-    default: "Onward & Upward Services | Landscaping & Excavation in Hot Springs, AR",
+    default: "Landscaping, Excavation & Tree Work in Hot Springs, AR | Onward & Upward Services",
     template: "%s | Onward & Upward Services",
   },
-
   description:
-    "Landscaping, excavation, tree removal, and soil delivery in Hot Springs, Glenwood, and surrounding Arkansas areas. Call now for fast, reliable service.",
-
+    "Landscaping, excavation, tree work, land clearing, grading, drainage help, mulch, soil delivery, yard cleanup, and debris hauling in Hot Springs and Central Arkansas.",
   keywords: [
-  // 🔥 Primary (Hot Springs core)
-  "landscaping Hot Springs AR",
-  "landscaping Hot Springs Arkansas",
-  "lawn care Hot Springs AR",
-  "tree removal Hot Springs AR",
-  "excavation Hot Springs AR",
-  "land clearing Hot Springs AR",
-  "yard cleanup Hot Springs AR",
-
-  // 📍 Nearby cities (this is what you're missing)
-  "landscaping Benton AR",
-  "landscaping Bryant AR",
-  "landscaping Malvern AR",
-  "landscaping Arkadelphia AR",
-  "landscaping Glenwood AR",
-
-  "tree removal Benton AR",
-  "tree removal Bryant AR",
-  "tree removal Malvern AR",
-  "tree removal Arkadelphia AR",
-
-  "excavation Benton AR",
-  "excavation Bryant AR",
-  "excavation Malvern AR",
-
-  // 🌎 Regional / broader Arkansas (authority + reach)
-  "landscaping central Arkansas",
-  "land clearing Arkansas",
-  "excavation services Arkansas",
-  "tree removal central Arkansas",
-
-  // 🧱 Service-specific (intent keywords)
-  "mulch delivery Hot Springs AR",
-  "topsoil delivery Hot Springs AR",
-  "garden soil Hot Springs AR",
-  "dirt work Hot Springs AR",
-  "grading and leveling Hot Springs AR",
-
-  // 🔎 Buyer intent / real searches
-  "affordable landscaping Hot Springs AR",
-  "best landscaper Hot Springs AR",
-  "local landscaping company Hot Springs",
-  "landscaping services near Hot Springs AR",
-  "tree cutting service near Hot Springs",
-
-  // ⚡ Light “near me” usage (don’t overdo it)
-  "landscaping near me Hot Springs AR",
-  "tree removal near me Hot Springs AR",
-],
-
+    "landscaping Hot Springs AR",
+    "excavation Hot Springs AR",
+    "tree removal Hot Springs AR",
+    "land clearing Hot Springs AR",
+    "yard cleanup Hot Springs AR",
+    "mulch delivery Hot Springs AR",
+    "soil delivery Hot Springs AR",
+    "grading Hot Springs AR",
+    "drainage help Hot Springs AR",
+    "brush cleanup Hot Springs AR",
+    "debris hauling Hot Springs AR",
+    "landscaping Benton AR",
+    "landscaping Bryant AR",
+    "landscaping Malvern AR",
+    "landscaping Glenwood AR",
+    "landscaping Arkadelphia AR",
+    "Central Arkansas property cleanup",
+  ],
+  authors: [{ name: siteData.brand.name }],
+  creator: siteData.brand.name,
+  publisher: siteData.brand.name,
+  alternates: {
+    canonical: siteUrl,
+  },
   openGraph: {
-    title: "Onward & Upward Services",
+    title: "Landscaping, Excavation & Tree Work in Hot Springs, AR",
     description:
-      "Landscaping, excavation, tree removal, and soil delivery in Hot Springs and surrounding areas.",
-    url: "https://onwardsandupward.com",
-    siteName: "Onward & Upward Services",
+      "Outdoor property services around Hot Springs including landscaping, excavation, tree cleanup, land clearing, grading, mulch, soil delivery, and hauling.",
+    url: siteUrl,
+    siteName: siteData.brand.name,
     images: [
       {
         url: "/images/hero.png",
         width: 1200,
         height: 630,
+        alt: "Onward and Upward Services landscaping and excavation work in Hot Springs Arkansas",
       },
     ],
     locale: "en_US",
     type: "website",
   },
-
   twitter: {
     card: "summary_large_image",
-    title: "Onward & Upward Services",
+    title: "Landscaping, Excavation & Tree Work in Hot Springs, AR",
     description:
-      "Landscaping, excavation, and soil delivery in Hot Springs, AR.",
+      "Landscaping, excavation, tree cleanup, mulch, soil delivery, land clearing, grading, and yard cleanup around Hot Springs and Central Arkansas.",
     images: ["/images/hero.png"],
   },
-
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
   icons: {
     icon: "/favicon.ico",
   },
-  alternates: {
-  canonical: "https://onwardsandupward.com",
-},
 };
 
-
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${playfair.variable} antialiased`}>
+      <body>
         {children}
         <Analytics />
       </body>

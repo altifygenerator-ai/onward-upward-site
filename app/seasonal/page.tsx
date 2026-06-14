@@ -1,350 +1,203 @@
-"use client";
-
-import Link from "next/link";
+import type { Metadata } from "next";
 import Image from "next/image";
-import { useState } from "react";
-import {
-  ArrowRight,
-  CalendarDays,
-  ChevronRight,
-  Leaf,
-  PhoneCall,
-  Sparkles,
-} from "lucide-react";
-import { siteData } from "@/lib/site-data";
+import Link from "next/link";
+import { ArrowRight, ChevronRight, Leaf, PhoneCall, Sparkles } from "lucide-react";
+import { JsonLd } from "@/components/json-ld";
+import { SectionHeading } from "@/components/section-heading";
+import { SiteFooter } from "@/components/site-footer";
+import { SiteHeader } from "@/components/site-header";
+import { siteData, siteUrl } from "@/lib/site-data";
+import { formatPhoneLink } from "@/lib/utils";
 
-function SectionHeading({ eyebrow, title, text }: any) {
+export const metadata: Metadata = {
+  title: "Mulch, Soil, Supersoil & Seasonal Products in Hot Springs, AR",
+  description:
+    "Current mulch, soil, supersoil, compost blends, plants, garden supplies, pickup, and delivery options from Onward & Upward Services in Hot Springs, AR.",
+  alternates: {
+    canonical: `${siteUrl}/seasonal`,
+  },
+  openGraph: {
+    title: "Mulch, Soil & Seasonal Products in Hot Springs, AR",
+    description:
+      "View current soil blends, mulch, compost, plants, and garden materials available from Onward & Upward Services.",
+    url: `${siteUrl}/seasonal`,
+    images: [
+      {
+        url: "/images/gallery/soil6.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Mulch soil and seasonal products in Hot Springs AR",
+      },
+    ],
+  },
+};
+
+type Product = (typeof siteData.products)[number];
+
+function ProductCard({ item }: { item: Product }) {
   return (
-    <div className="max-w-2xl">
-      <p className="text-sm font-semibold tracking-[0.22em] uppercase text-emerald-300/80">
-        {eyebrow}
-      </p>
-      <h2 className="mt-2 text-3xl md:text-4xl font-semibold text-white tracking-tight">
-        {title}
-      </h2>
-      <p className="mt-4 text-white/70 leading-relaxed">{text}</p>
-    </div>
-  );
-}
-
-function ProductCard({ item }: { item: any }) {
-  const [index, setIndex] = useState(0);
-
-  return (
-    <div className="flex h-full flex-col overflow-hidden rounded-[1.5rem] border border-white/10 bg-white/5 shadow-lg shadow-black/20">
-      <div
-        className="relative h-[220px] w-full cursor-pointer hover:opacity-90 transition"
-        onClick={() =>
-          setIndex((prev) => (prev + 1) % item.images.length)
-        }
-      >
-        <Image
-          src={item.images[index]}
-          alt={`${item.name} in Hot Springs AR`}
-          fill
-          className="object-cover"
-        />
-
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent" />
-
-        <div className="absolute left-4 top-4">
-          <span className="rounded-full border border-emerald-400/20 bg-emerald-400/10 px-3 py-1 text-xs font-medium text-emerald-100 backdrop-blur">
-            {item.note}
-          </span>
-        </div>
-
-        <div className="absolute bottom-4 left-4">
-          <span className="rounded-full bg-black/60 px-3 py-1 text-sm font-semibold text-white backdrop-blur">
-            {item.price}
-          </span>
-        </div>
+    <div className="rounded-[1.4rem] border border-white/10 bg-white/[0.045] p-5">
+      <div className="grid gap-3">
+        {item.images.map((image) => (
+          <Image
+            key={image}
+            src={image}
+            alt={`${item.name} available in Hot Springs AR`}
+            width={520}
+            height={340}
+            className="h-52 w-full rounded-xl object-cover"
+          />
+        ))}
       </div>
-
-      <div className="flex flex-1 flex-col p-6">
-        <h3 className="text-xl font-semibold text-white">{item.name}</h3>
-        <p className="mt-3 flex-grow text-white/70 leading-relaxed">
-          {item.description}
-        </p>
+      <div className="mt-5 flex items-start justify-between gap-4">
+        <div>
+          <h3 className="text-xl font-semibold text-white">{item.name}</h3>
+          <p className="mt-2 text-white/65">{item.description}</p>
+        </div>
+        <span className="rounded-full bg-emerald-400 px-3 py-1 text-sm font-bold text-black">{item.price}</span>
       </div>
+      <p className="mt-4 text-sm font-semibold text-emerald-300">{item.note}</p>
     </div>
   );
 }
 
 export default function SeasonalPage() {
-  const phoneLink = `tel:${siteData.contact.phone.replace(/[^\d+]/g, "")}`;
+  const phoneLink = formatPhoneLink(siteData.contact.phone);
+
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Mulch, Soil, Supersoil, Compost, and Seasonal Products in Hot Springs AR",
+    url: `${siteUrl}/seasonal`,
+    itemListElement: siteData.products.map((product, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      item: {
+        "@type": "Product",
+        name: product.name,
+        description: product.description,
+        image: product.images.map((image) => `${siteUrl}${image}`),
+        offers: {
+          "@type": "Offer",
+          priceCurrency: "USD",
+          price: product.price.replace(/[^0-9.]/g, ""),
+          availability: "https://schema.org/InStock",
+        },
+      },
+    })),
+  };
 
   return (
     <div className="min-h-screen bg-[#0d1210] text-white">
+      <JsonLd data={schema} />
+      <SiteHeader />
 
-      {/* HEADER */}
-      <header className="sticky top-0 z-50 border-b border-white/10 bg-[#0d1210]/85 backdrop-blur-xl">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 md:px-8">
-          
-          <Link href="/" className="flex items-center gap-3">
-            <Image src={siteData.brand.logo} alt="logo" width={60} height={60} />
-            <span className="font-semibold">{siteData.brand.name}</span>
-          </Link>
-
-          <nav className="hidden md:flex gap-6 text-sm text-white/70">
-            <a href="/#services">Services</a>
-            <a href="/#work">Work</a>
-            <Link href="/seasonal">Products</Link>
-            <a href="/#reviews">Reviews</a>
-            <a href="/#contact">Contact</a>
-            <Link href="/gallery">Gallery</Link>
-          </nav>
-
-          <a
-            href={phoneLink}
-            className="bg-emerald-400 text-black px-4 py-2 rounded-full font-semibold"
-          >
-            Call Now
-          </a>
-
-        </div>
-      </header>
-
-      {/* HERO */}
-      <section className="mx-auto max-w-7xl px-4 py-16 grid md:grid-cols-2 gap-10">
-        <div>
-          <p className="text-emerald-300 flex items-center gap-2">
-            <CalendarDays className="w-4 h-4" />
-            Seasonal Materials & Products
-          </p>
-
-          <h1 className="text-4xl md:text-6xl font-semibold mt-4">
-            Mulch, soil, plants, and landscaping materials in Hot Springs, AR
-          </h1>
-
-          <p className="mt-6 text-white/70">
-            This page is updated as the season changes. Check here for mulch delivery,
-            topsoil, garden soil, plants, and landscaping materials available in
-            Hot Springs, Benton, Bryant, Malvern, and surrounding Arkansas areas.
-          </p>
-
-          <div className="mt-6 flex gap-4 flex-wrap">
-            <Link
-              href="/#quote"
-              className="bg-white text-black px-6 py-3 rounded-full font-semibold"
-            >
-              Request Quote
-              <ArrowRight className="inline ml-2 w-4 h-4" />
-            </Link>
-
-            <Link href="/" className="border px-6 py-3 rounded-full">
-              Back Home
-            </Link>
-          </div>
-        </div>
-
-        <Image
-          src={siteData.seasonalItems[0].image}
-          alt="mulch and soil delivery Hot Springs AR"
-          width={600}
-          height={400}
-          className="rounded-xl object-cover"
-        />
-      </section>
-
-      {/* SEASONAL ITEMS */}
-      <section className="mx-auto max-w-7xl px-4 py-16">
-        <SectionHeading
-          eyebrow="Available Now"
-          title="Seasonal plants, soil, and landscaping materials"
-          text="Rotating availability of plants, mulch, soil, and seasonal landscaping products for properties in Hot Springs and surrounding Arkansas areas."
-        />
-
-        <div className="grid md:grid-cols-3 gap-6 mt-10">
-          {siteData.seasonalItems.map((item) => (
-            <div key={item.name} className="bg-white/5 p-6 rounded-xl">
-              <Image
-                src={item.image}
-                alt={`${item.name} Hot Springs AR`}
-                width={400}
-                height={250}
-                className="rounded-lg object-cover"
-              />
-
-              <div className="mt-4 flex justify-between items-center">
-                <div className="flex items-center gap-2 text-emerald-300">
-                  <Leaf className="w-4 h-4" />
-                  <span className="text-xs uppercase">{item.tag}</span>
-                </div>
-              </div>
-
-              <h3 className="mt-4 font-semibold text-lg">{item.name}</h3>
-              <p className="text-white/70 mt-2">{item.description}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* CORE PRODUCTS */}
-      <section className="mx-auto max-w-7xl px-4 py-16">
-        <SectionHeading
-          eyebrow="Always Available"
-          title="Mulch, soil, and landscaping materials year-round"
-          text="We keep core materials in stock year-round for landscaping, land prep, grading, and ongoing outdoor projects."
-        />
-        <p className="mt-6 text-white/70">
-          Click through for more images
-        </p>
-
-        <div className="mt-10 grid gap-6 md:grid-cols-3">
-          {siteData.products.map((item) => (
-            <ProductCard key={item.name} item={item} />
-          ))}
-        </div>
-      </section>
-
-      {/* PROMO */}
-      <section className="mx-auto max-w-7xl px-4 py-16">
-        <div className="bg-emerald-400/10 border border-emerald-400/20 p-8 rounded-xl">
-          <div className="flex items-start gap-3">
-            <Sparkles className="text-emerald-300" />
+      <main>
+        <section className="relative overflow-hidden border-b border-white/10">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(52,211,153,0.16),transparent_30rem)]" />
+          <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-4 py-16 md:grid-cols-2 md:py-20">
             <div>
-              <h3 className="text-xl font-semibold">Seasonal deals on mulch, soil, and plants</h3>
-              <p className="text-white/70 mt-2">
-                Keep an eye on this space for seasonal discounts on mulch delivery,
-                topsoil, plants, and landscaping materials in Hot Springs and nearby areas.
+              <p className="text-sm font-semibold uppercase tracking-[0.22em] text-emerald-300/80">{siteData.seasonalIntro.eyebrow}</p>
+              <h1 className="mt-4 text-4xl font-semibold leading-[1.02] text-white md:text-6xl">
+                Mulch, soil, supersoil, compost, plants, and seasonal products.
+              </h1>
+              <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/72">
+                {siteData.seasonalIntro.body} Check current availability for mulch delivery, topsoil, garden soil, plants, and landscaping materials around Hot Springs and nearby Arkansas areas.
               </p>
+              <div className="mt-7 flex flex-wrap gap-3">
+                <Link href="/#contact" className="btn-quote-primary inline-flex items-center gap-2">
+                  Request Quote <ArrowRight className="h-4 w-4" />
+                </Link>
+                <a href={phoneLink} className="inline-flex items-center gap-2 rounded-full border border-white/20 px-6 py-3 font-semibold text-white transition hover:border-emerald-300/50 hover:text-emerald-300">
+                  <PhoneCall className="h-4 w-4" />
+                  Call Now
+                </a>
+              </div>
+            </div>
+            <div className="relative min-h-[380px] overflow-hidden rounded-[1.7rem] border border-white/10 bg-white/5 shadow-2xl shadow-black/30 md:min-h-[480px]">
+              <Image src="/images/gallery/soil6.jpg" alt="mulch soil compost and seasonal products in Hot Springs AR" fill className="object-cover" priority />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* ADD-ONS */}
-      <section className="mx-auto max-w-7xl px-4 py-16">
-        <div className="rounded-[1.5rem] border border-white/10 bg-white/5 p-8 shadow-lg shadow-black/20">
-
-          <div className="max-w-2xl">
-            <p className="text-sm font-semibold tracking-[0.22em] uppercase text-emerald-300/80">
-              Add-ons & Supplies
-            </p>
-
-            <h2 className="mt-2 text-3xl md:text-4xl font-semibold text-white tracking-tight">
-              Buckets and containers for soil and landscaping work
-            </h2>
-
-            <p className="mt-4 text-white/70 leading-relaxed">
-              We offer containers for soil pickup, mulch transport, and smaller landscaping projects.
-              Great for garden work, planting, and hauling materials.
-            </p>
+        <section className="mx-auto max-w-7xl px-4 py-16 md:py-20">
+          <SectionHeading
+            eyebrow="Available Now"
+            title="Seasonal plants, soil, and landscaping materials"
+            text="Rotating availability of plants, mulch, soil, and seasonal landscaping products for properties in Hot Springs and surrounding Arkansas areas."
+          />
+          <div className="mt-10 grid gap-6 md:grid-cols-3">
+            {siteData.seasonalItems.map((item) => (
+              <div key={item.name} className="rounded-[1.4rem] border border-white/10 bg-white/[0.045] p-5">
+                <Image src={item.image} alt={item.alt} width={500} height={300} className="h-56 w-full rounded-xl object-cover" />
+                <div className="mt-4 flex items-center gap-2 text-emerald-300">
+                  <Leaf className="h-4 w-4" />
+                  <span className="text-xs font-semibold uppercase tracking-[0.16em]">{item.tag}</span>
+                </div>
+                <h3 className="mt-4 text-xl font-semibold text-white">{item.name}</h3>
+                <p className="mt-2 leading-relaxed text-white/65">{item.description}</p>
+              </div>
+            ))}
           </div>
+        </section>
 
-          <div className="mt-8 grid gap-6 md:grid-cols-3">
-            <div className="rounded-xl border border-white/10 bg-black/30 p-6">
-              <h3 className="text-lg font-semibold text-white">1 Gallon Pots</h3>
-              <p className="mt-2 text-white/70">$3 each</p>
-            </div>
+        <section className="mx-auto max-w-7xl px-4 py-16 md:py-20">
+          <SectionHeading
+            eyebrow="Core Products"
+            title="Mulch, soil, and landscaping materials year-round"
+            text="Core materials are useful for landscaping, land prep, grading support, garden beds, and ongoing outdoor projects."
+          />
+          <div className="mt-10 grid gap-6 md:grid-cols-3">
+            {siteData.products.map((item) => (
+              <ProductCard key={item.name} item={item} />
+            ))}
+          </div>
+        </section>
 
-            <div className="rounded-xl border border-white/10 bg-black/30 p-6">
-              <h3 className="text-lg font-semibold text-white">3 Gallon Pots</h3>
-              <p className="mt-2 text-white/70">$8 each</p>
-            </div>
-
-            <div className="rounded-xl border border-white/10 bg-black/30 p-6">
-              <h3 className="text-lg font-semibold text-white">25 Gallon Pots</h3>
-              <p className="mt-2 text-white/70">$45 each</p>
+        <section className="mx-auto max-w-7xl px-4 py-16 md:py-20">
+          <div className="rounded-[2rem] border border-emerald-300/20 bg-emerald-400/10 p-6 md:p-8">
+            <div className="flex gap-4">
+              <Sparkles className="mt-1 h-6 w-6 shrink-0 text-emerald-300" />
+              <div>
+                <h2 className="text-2xl font-semibold text-white md:text-4xl">Ask about current mulch, soil, and plant availability.</h2>
+                <p className="mt-3 max-w-3xl leading-relaxed text-white/70">
+                  Availability can shift with the season. Call or message to check current products, schedule delivery, or combine materials with landscaping and yard cleanup work.
+                </p>
+              </div>
             </div>
           </div>
+        </section>
 
-          <p className="mt-6 text-white/60 text-sm">
-            Ask about availability when ordering soil, mulch, or delivery services.
-          </p>
-
-        </div>
-      </section>
-
-      {/* CONTACT */}
-      <section className="mx-auto max-w-7xl px-4 py-16">
-        <div className="bg-white/5 p-8 rounded-xl">
-          <h3 className="text-2xl font-semibold">Need mulch, soil, or delivery?</h3>
-          <p className="text-white/70 mt-2">
-            Call or message to check availability, schedule delivery, or ask about landscaping materials.
-          </p>
-
-          <div className="mt-6 flex gap-4 flex-wrap">
-            <a
-              href={phoneLink}
-              className="bg-emerald-400 text-black px-6 py-3 rounded-full font-semibold"
-            >
-              <PhoneCall className="inline w-4 h-4 mr-2" />
-              Call Now
-            </a>
-
-            <Link href="/#contact" className="border px-6 py-3 rounded-full">
-              Contact Form
-              <ChevronRight className="inline ml-2 w-4 h-4" />
-            </Link>
+        <section className="mx-auto max-w-7xl px-4 py-16 md:py-20">
+          <div className="rounded-[2rem] border border-white/10 bg-white/[0.045] p-6 md:p-8">
+            <SectionHeading
+              eyebrow="Add-ons & Supplies"
+              title="Buckets and containers for soil and landscaping work"
+              text="Containers may be available for soil pickup, mulch transport, garden work, planting, and smaller landscape projects."
+            />
+            <div className="mt-8 grid gap-6 md:grid-cols-3">
+              {["1 Gallon Pots, $3 each", "3 Gallon Pots, $8 each", "25 Gallon Pots, $45 each"].map((item) => (
+                <div key={item} className="rounded-xl border border-white/10 bg-black/30 p-6">
+                  <h3 className="text-lg font-semibold text-white">{item}</h3>
+                  <p className="mt-2 text-white/60">Ask about availability when ordering soil, mulch, or delivery services.</p>
+                </div>
+              ))}
+            </div>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <a href={phoneLink} className="inline-flex items-center gap-2 rounded-full bg-emerald-400 px-6 py-3 font-bold text-black transition hover:bg-emerald-300">
+                <PhoneCall className="h-4 w-4" />
+                Call Now
+              </a>
+              <Link href="/#contact" className="inline-flex items-center gap-2 rounded-full border border-white/15 px-6 py-3 font-semibold text-white transition hover:border-emerald-300/50 hover:text-emerald-300">
+                Contact Form <ChevronRight className="h-4 w-4" />
+              </Link>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </main>
 
-      {/* FOOTER */}
-   <footer className="border-t border-white/10 bg-[#0d1210]">
-  <div className="mx-auto max-w-7xl px-4 py-10 grid md:grid-cols-3 gap-8 text-sm text-white/70">
-
-    {/* BRAND */}
-    <div>
-      <p className="font-semibold text-white">{siteData.brand.name}</p>
-      <p className="mt-3 text-white/60">
-        Landscaping, excavation, tree removal, and cleanup services for
-        Hot Springs and surrounding Arkansas communities.
-      </p>
-    </div>
-
-    {/* SERVICES */}
-    <div>
-      <p className="font-semibold text-white mb-3">Services</p>
-      <div className="flex flex-col gap-2">
-        <Link href="/landscaping-hot-springs-ar" className="hover:text-emerald-300">
-          Landscaping Hot Springs AR
-        </Link>
-        <Link href="/excavation-hot-springs-ar" className="hover:text-emerald-300">
-          Excavation Hot Springs AR
-        </Link>
-        <Link href="/tree-removal-hot-springs-ar" className="hover:text-emerald-300">
-          Tree Removal Hot Springs AR
-        </Link>
-        <Link href="/seasonal" className="hover:text-emerald-300">
-          Mulch, Soil & Products
-        </Link>
-      </div>
-    </div>
-
-    {/* AREAS */}
-    <div>
-      <p className="font-semibold text-white mb-3">Areas We Serve</p>
-      <div className="flex flex-col gap-2">
-        <span>Hot Springs, AR</span>
-        <span>Benton, AR</span>
-        <span>Bryant, AR</span>
-        <span>Malvern, AR</span>
-        <span>Glenwood, AR</span>
-        <span>Arkadelphia, AR</span>
-      </div>
-    </div>
-
-  </div>
-
-  {/* BOTTOM */}
-  <div className="border-t border-white/10 py-6 text-center text-xs text-white/50">
-    © {new Date().getFullYear()} {siteData.brand.name}. All rights reserved.
-
-    <div className="mt-2">
-      Site by{" "}
-      <a
-        href="https://hometownwebservicesar.cc"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="hover:text-emerald-300 transition"
-      >
-        Hometown Web Services AR
-      </a>
-    </div>
-  </div>
-</footer>
+      <SiteFooter />
     </div>
   );
 }

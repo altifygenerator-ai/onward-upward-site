@@ -1,213 +1,115 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { siteData } from "@/lib/site-data";
+import { ArrowRight, Camera } from "lucide-react";
+import { JsonLd } from "@/components/json-ld";
+import { SectionHeading } from "@/components/section-heading";
+import { SiteFooter } from "@/components/site-footer";
+import { SiteHeader } from "@/components/site-header";
+import { siteData, siteUrl } from "@/lib/site-data";
 
-export const metadata = {
-  title: "Landscaping, Tree Removal & Cleanup Gallery in Hot Springs, AR | Onward & Upward",
+export const metadata: Metadata = {
+  title: "Project Gallery | Landscaping, Excavation & Cleanup in Hot Springs, AR",
   description:
-    "See real landscaping, tree removal, land clearing, excavation, mulch, soil, and cleanup work from Hot Springs, Benton, Bryant, Malvern, Glenwood, Arkadelphia, and surrounding Arkansas areas.",
+    "View project photos from Onward & Upward Services including landscaping, tree cleanup, excavation, soil, mulch, planting, and property cleanup work around Hot Springs, AR.",
+  alternates: {
+    canonical: `${siteUrl}/gallery`,
+  },
+  openGraph: {
+    title: "Onward & Upward Project Gallery",
+    description:
+      "Landscaping, excavation, tree cleanup, soil, mulch, planting, and property cleanup photos from the Hot Springs, AR area.",
+    url: `${siteUrl}/gallery`,
+    images: [
+      {
+        url: "/images/gallery/worktruck.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Onward and Upward Services project gallery",
+      },
+    ],
+  },
 };
 
 export default function GalleryPage() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: "Onward & Upward Services Project Gallery",
+    description: metadata.description,
+    url: `${siteUrl}/gallery`,
+    mainEntity: siteData.galleryImages.slice(0, 12).map((image) => ({
+      "@type": "ImageObject",
+      contentUrl: `${siteUrl}${image.src}`,
+      caption: image.alt,
+    })),
+  };
+
   return (
     <div className="min-h-screen bg-[#0d1210] text-white">
-     <header className="sticky top-0 z-50 border-b border-white/10 bg-[#0d1210]/85 backdrop-blur-xl">
-  <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 md:px-8">
-    
-    <Link href="/" className="flex items-center gap-3">
-      <Image src={siteData.brand.logo} alt="logo" width={60} height={60} />
-      <span className="font-semibold">{siteData.brand.name}</span>
-    </Link>
+      <JsonLd data={schema} />
+      <SiteHeader />
 
-    <nav className="hidden md:flex gap-6 text-sm text-white/70">
-      <a href="/#services">Services</a>
-      <a href="/#work">Work</a>
-      <Link href="/seasonal">Products</Link>
-      <a href="/#reviews">Reviews</a>
-      <a href="/#contact">Contact</a>
-      <Link href="/gallery">Gallery</Link>
-    </nav>
+      <main>
+        <section className="relative overflow-hidden border-b border-white/10">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(52,211,153,0.16),transparent_30rem)]" />
+          <div className="relative mx-auto max-w-7xl px-4 py-16 md:py-20">
+            <p className="flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.2em] text-emerald-300/80">
+              <Camera className="h-4 w-4" />
+              Project Gallery
+            </p>
+            <h1 className="mt-4 max-w-4xl text-4xl font-semibold leading-[1.02] text-white md:text-6xl">
+              Landscaping, excavation, soil, mulch, tree cleanup, and property work around Hot Springs.
+            </h1>
+            <p className="mt-6 max-w-3xl text-lg leading-relaxed text-white/72">
+              Browse recent photos from outdoor work, material delivery, planting, cleanup, excavation, and property improvement projects across Hot Springs and Central Arkansas.
+            </p>
+            <div className="mt-7 flex flex-wrap gap-3">
+              <Link href="/#contact" className="btn-quote-primary inline-flex items-center gap-2">
+                Request Quote
+              </Link>
+              <Link href="/#services" className="inline-flex items-center gap-2 rounded-full border border-white/20 px-6 py-3 font-semibold text-white transition hover:border-emerald-300/50 hover:text-emerald-300">
+                View Services <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
+          </div>
+        </section>
 
-    <a
-      href={`tel:${siteData.contact.phone.replace(/[^\d+]/g, "")}`}
-      className="bg-emerald-400 text-black px-4 py-2 rounded-full font-semibold"
-    >
-      Call Now
-    </a>
-
-  </div>
-</header>
-
-      <section className="mx-auto max-w-7xl px-4 py-16">
-        <p className="text-emerald-300 text-sm uppercase tracking-[0.2em]">
-          Our Work
-        </p>
-
-        <h1 className="mt-3 text-4xl md:text-5xl font-semibold">
-          Landscaping, Tree Removal & Cleanup Gallery
-        </h1>
-
-        <p className="mt-4 text-white/70 max-w-xl">
-          Real project photos, before and after results, landscaping work,
-          tree removal, land clearing, brush cleanup, debris hauling, mulch,
-          soil, materials, and equipment from around Hot Springs, Benton,
-          Bryant, Malvern, Glenwood, Arkadelphia, and surrounding Arkansas communities.
-        </p>
-      </section>
-
-      {/* BEFORE & AFTER */}
-      <section className="mx-auto max-w-7xl px-4 pb-16">
-        <h2 className="text-2xl md:text-3xl font-semibold">
-          Before & After Landscaping and Cleanup Work
-        </h2>
-
-        <div className="grid md:grid-cols-3 gap-10 mt-8">
-          {siteData.gallery.map((item, i) => (
-            <div key={i} className="space-y-4">
-              <h3 className="text-lg font-semibold">{item.title}</h3>
-
-              <div className="grid grid-cols-2 gap-3">
-                <div className="relative group overflow-hidden rounded-xl border border-white/10">
-                  <Image
-                    src={item.before}
-                    alt={`Before ${item.alt} in Hot Springs Arkansas`}
-                    width={300}
-                    height={200}
-                    className="w-full h-[200px] object-cover group-hover:scale-105 transition duration-500"
-                  />
-
-                  <span className="absolute top-2 left-2 text-xs bg-black/70 px-2 py-1 rounded">
-                    Before
-                  </span>
-                </div>
-
-                <div className="relative group overflow-hidden rounded-xl border border-white/10">
-                  <Image
-                    src={item.after}
-                    alt={`After ${item.alt} in Hot Springs Arkansas`}
-                    width={300}
-                    height={200}
-                    className="w-full h-[200px] object-cover group-hover:scale-105 transition duration-500"
-                  />
-
-                  <span className="absolute top-2 left-2 text-xs bg-emerald-400 text-black px-2 py-1 rounded">
-                    After
-                  </span>
-                </div>
+        <section className="mx-auto max-w-7xl px-4 py-16 md:py-20">
+          <SectionHeading
+            eyebrow="Photos"
+            title="Real outdoor work and available materials"
+            text="Images are grouped naturally for customers comparing landscaping, tree cleanup, excavation, soil, mulch, planting, and property cleanup work."
+          />
+          <div className="mt-10 columns-1 gap-5 sm:columns-2 lg:columns-3">
+            {siteData.galleryImages.map((image) => (
+              <div key={image.src} className="mb-5 break-inside-avoid overflow-hidden rounded-[1.25rem] border border-white/10 bg-white/[0.045] p-3">
+                <Image
+                  src={image.src}
+                  alt={image.alt}
+                  width={700}
+                  height={520}
+                  sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                  className="h-auto w-full rounded-xl object-cover"
+                />
+                <p className="mt-3 text-sm leading-relaxed text-white/60">{image.alt}</p>
               </div>
-            </div>
-          ))}
-        </div>
-      </section>
+            ))}
+          </div>
+        </section>
 
-      {/* FULL GALLERY */}
-      <section className="mx-auto max-w-7xl px-4 pb-20">
-        <h2 className="text-2xl md:text-3xl font-semibold">
-          More Landscaping, Tree Work, and Property Cleanup Photos
-        </h2>
+        <section className="mx-auto max-w-5xl px-4 pb-16 text-center md:pb-20">
+          <h2 className="text-3xl font-semibold text-white md:text-5xl">Need work like this on your property?</h2>
+          <p className="mx-auto mt-4 max-w-2xl leading-relaxed text-white/70">
+            Send a quick message with your location and a few photos of the area. We can talk through landscaping, cleanup, material delivery, tree work, grading, or excavation options.
+          </p>
+          <Link href="/#contact" className="mt-7 inline-flex items-center gap-2 rounded-full bg-emerald-400 px-6 py-3 font-bold text-black transition hover:bg-emerald-300">
+            Request Quote <ArrowRight className="h-4 w-4" />
+          </Link>
+        </section>
+      </main>
 
-        <p className="mt-3 text-white/70 max-w-xl">
-          A closer look at recent landscaping, tree removal, land clearing,
-          brush cleanup, mulch, soil, materials, and outdoor property work
-          across Hot Springs and nearby Arkansas areas.
-        </p>
-
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 mt-8">
-          {siteData.galleryImages.map((image, i) => (
-            <div
-              key={i}
-              className="group overflow-hidden rounded-xl border border-white/10 bg-white/5"
-            >
-              <Image
-                src={image.src}
-                alt={`Onward & Upward landscaping tree removal and cleanup project photo ${i + 1} in Hot Springs AR`}
-                width={500}
-                height={350}
-                className="w-full h-[260px] object-cover group-hover:scale-105 transition duration-500"
-              />
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-4xl px-4 pb-20 text-center">
-        <h2 className="text-3xl font-semibold">Like what you see?</h2>
-
-        <p className="mt-4 text-white/70">
-          Let’s talk about your landscaping, tree removal, land clearing,
-          cleanup, mulch, soil, or outdoor property project and get you a quote.
-        </p>
-
-        <a
-          href="/#contact"
-          className="inline-block mt-6 bg-emerald-400 text-black px-6 py-3 rounded-full font-semibold"
-        >
-          Request a Quote
-        </a>
-      </section>
-<footer className="border-t border-white/10 bg-[#0d1210]">
-  <div className="mx-auto max-w-7xl px-4 py-10 grid md:grid-cols-3 gap-8 text-sm text-white/70">
-
-    {/* BRAND */}
-    <div>
-      <p className="font-semibold text-white">{siteData.brand.name}</p>
-      <p className="mt-3 text-white/60">
-        Landscaping, excavation, tree removal, and cleanup services for
-        Hot Springs and surrounding Arkansas communities.
-      </p>
-    </div>
-
-    {/* SERVICES */}
-    <div>
-      <p className="font-semibold text-white mb-3">Services</p>
-      <div className="flex flex-col gap-2">
-        <Link href="/landscaping-hot-springs-ar" className="hover:text-emerald-300">
-          Landscaping Hot Springs AR
-        </Link>
-        <Link href="/excavation-hot-springs-ar" className="hover:text-emerald-300">
-          Excavation Hot Springs AR
-        </Link>
-        <Link href="/tree-removal-hot-springs-ar" className="hover:text-emerald-300">
-          Tree Removal Hot Springs AR
-        </Link>
-        <Link href="/seasonal" className="hover:text-emerald-300">
-          Mulch, Soil & Products
-        </Link>
-      </div>
-    </div>
-
-    {/* AREAS */}
-    <div>
-      <p className="font-semibold text-white mb-3">Areas We Serve</p>
-      <div className="flex flex-col gap-2">
-        <span>Hot Springs, AR</span>
-        <span>Benton, AR</span>
-        <span>Bryant, AR</span>
-        <span>Malvern, AR</span>
-        <span>Glenwood, AR</span>
-        <span>Arkadelphia, AR</span>
-      </div>
-    </div>
-
-  </div>
-
-  {/* BOTTOM */}
-  <div className="border-t border-white/10 py-6 text-center text-xs text-white/50">
-    © {new Date().getFullYear()} {siteData.brand.name}. All rights reserved.
-
-    <div className="mt-2">
-      Site by{" "}
-      <a
-        href="https://hometownwebservicesar.cc"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="hover:text-emerald-300 transition"
-      >
-        Hometown Web Services AR
-      </a>
-    </div>
-  </div>
-</footer>
+      <SiteFooter />
     </div>
   );
 }
