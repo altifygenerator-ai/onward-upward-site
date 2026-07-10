@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Camera } from "lucide-react";
+import { ArrowRight, Camera, CheckCircle2 } from "lucide-react";
 import { JsonLd } from "@/components/json-ld";
 import { SectionHeading } from "@/components/section-heading";
 import { SiteFooter } from "@/components/site-footer";
@@ -9,20 +9,20 @@ import { SiteHeader } from "@/components/site-header";
 import { siteData, siteUrl } from "@/lib/site-data";
 
 export const metadata: Metadata = {
-  title: "Project Gallery | Landscaping, Excavation & Cleanup in Hot Springs, AR",
+  title: "Project Gallery",
   description:
-    "View project photos from Onward & Upward Services including landscaping, tree cleanup, excavation, soil, mulch, planting, and property cleanup work around Hot Springs, AR.",
+    "See landscaping, mulch, excavation, tree cleanup, soil, planting, and property cleanup projects completed around Hot Springs and Central Arkansas.",
   alternates: {
     canonical: `${siteUrl}/gallery`,
   },
   openGraph: {
-    title: "Onward & Upward Project Gallery",
+    title: "Onward & Upward Services Project Gallery",
     description:
-      "Landscaping, excavation, tree cleanup, soil, mulch, planting, and property cleanup photos from the Hot Springs, AR area.",
+      "Real landscaping, excavation, mulch, tree cleanup, soil, and property work from the Hot Springs area.",
     url: `${siteUrl}/gallery`,
     images: [
       {
-        url: "/images/gallery/worktruck.jpg",
+        url: "/images/og-home.jpg",
         width: 1200,
         height: 630,
         alt: "Onward and Upward Services project gallery",
@@ -38,7 +38,7 @@ export default function GalleryPage() {
     name: "Onward & Upward Services Project Gallery",
     description: metadata.description,
     url: `${siteUrl}/gallery`,
-    mainEntity: siteData.galleryImages.slice(0, 12).map((image) => ({
+    mainEntity: siteData.galleryImages.slice(0, 16).map((image) => ({
       "@type": "ImageObject",
       contentUrl: `${siteUrl}${image.src}`,
       caption: image.alt,
@@ -46,66 +46,94 @@ export default function GalleryPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0d1210] text-white">
+    <div className="min-h-screen bg-[#0b110e] text-white">
       <JsonLd data={schema} />
       <SiteHeader />
 
       <main>
         <section className="relative overflow-hidden border-b border-white/10">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(52,211,153,0.16),transparent_30rem)]" />
-          <div className="relative mx-auto max-w-7xl px-4 py-16 md:py-20">
-            <p className="flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.2em] text-emerald-300/80">
-              <Camera className="h-4 w-4" />
-              Project Gallery
-            </p>
-            <h1 className="mt-4 max-w-4xl text-4xl font-semibold leading-[1.02] text-white md:text-6xl">
-              Landscaping, excavation, soil, mulch, tree cleanup, and property work around Hot Springs.
-            </h1>
-            <p className="mt-6 max-w-3xl text-lg leading-relaxed text-white/72">
-              Browse recent photos from outdoor work, material delivery, planting, cleanup, excavation, and property improvement projects across Hot Springs and Central Arkansas.
-            </p>
-            <div className="mt-7 flex flex-wrap gap-3">
-              <Link href="/#contact" className="btn-quote-primary inline-flex items-center gap-2">
-                Request Quote
-              </Link>
-              <Link href="/#services" className="inline-flex items-center gap-2 rounded-full border border-white/20 px-6 py-3 font-semibold text-white transition hover:border-emerald-300/50 hover:text-emerald-300">
-                View Services <ArrowRight className="h-4 w-4" />
-              </Link>
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(74,222,128,0.16),transparent_31rem),radial-gradient(circle_at_82%_28%,rgba(201,162,92,0.1),transparent_28rem)]" />
+          <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-4 py-14 md:px-8 md:py-20 lg:grid-cols-[0.85fr_1.15fr]">
+            <div>
+              <p className="flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.2em] text-emerald-300/75">
+                <Camera className="h-4 w-4" />
+                Project Gallery
+              </p>
+              <h1 className="mt-5 text-4xl font-semibold leading-[1.02] text-white md:text-6xl">
+                Real outdoor work around Hot Springs and Central Arkansas.
+              </h1>
+              <p className="mt-6 max-w-2xl text-lg leading-8 text-white/70">
+                Browse landscaping, mulch, soil, excavation, tree cleanup, planting, and property improvement projects completed by Onward & Upward Services.
+              </p>
+              <div className="mt-8 flex flex-wrap gap-3">
+                <Link href="/#contact" className="btn-quote-primary inline-flex items-center gap-2">
+                  Request Quote <ArrowRight className="h-4 w-4" />
+                </Link>
+                <Link href="/#services" className="btn-outline inline-flex items-center gap-2">
+                  View Services
+                </Link>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-2 gap-4">
+              <div className="relative min-h-[430px] overflow-hidden rounded-[1.6rem] border border-white/10 sm:translate-y-7">
+                <Image src={siteData.featuredProject.before} alt={`Before ${siteData.featuredProject.alt}`} fill sizes="(min-width: 1024px) 28vw, 50vw" className="object-cover" priority />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent" />
+                <span className="absolute bottom-4 left-4 rounded-full bg-black/70 px-3 py-2 text-xs font-bold uppercase tracking-[0.14em] text-white backdrop-blur">Before</span>
+              </div>
+              <div className="relative min-h-[430px] overflow-hidden rounded-[1.6rem] border border-white/10">
+                <Image src={siteData.featuredProject.after} alt={`After ${siteData.featuredProject.alt}`} fill sizes="(min-width: 1024px) 28vw, 50vw" className="object-cover" priority />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent" />
+                <span className="absolute bottom-4 left-4 rounded-full bg-emerald-300 px-3 py-2 text-xs font-bold uppercase tracking-[0.14em] text-[#06110b]">After</span>
+              </div>
             </div>
           </div>
         </section>
 
-        <section className="mx-auto max-w-7xl px-4 py-16 md:py-20">
-          <SectionHeading
-            eyebrow="Photos"
-            title="Real outdoor work and available materials"
-            text="Images are grouped naturally for customers comparing landscaping, tree cleanup, excavation, soil, mulch, planting, and property cleanup work."
-          />
-          <div className="mt-10 columns-1 gap-5 sm:columns-2 lg:columns-3">
-            {siteData.galleryImages.map((image) => (
-              <div key={image.src} className="mb-5 break-inside-avoid overflow-hidden rounded-[1.25rem] border border-white/10 bg-white/[0.045] p-3">
-                <Image
-                  src={image.src}
-                  alt={image.alt}
-                  width={700}
-                  height={520}
-                  sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                  className="h-auto w-full rounded-xl object-cover"
-                />
-                <p className="mt-3 text-sm leading-relaxed text-white/60">{image.alt}</p>
-              </div>
+        <section className="border-b border-white/8 bg-[#0e1712]">
+          <div className="mx-auto grid max-w-7xl gap-4 px-4 py-8 md:grid-cols-3 md:px-8">
+            {["Real project photos", "Before and after work", "Landscaping, dirt work, cleanup, and materials"].map((item) => (
+              <p key={item} className="flex items-center gap-3 rounded-xl border border-white/8 bg-black/12 px-4 py-3 text-sm font-semibold text-white/70">
+                <CheckCircle2 className="h-4 w-4 shrink-0 text-emerald-300" />
+                {item}
+              </p>
             ))}
           </div>
         </section>
 
-        <section className="mx-auto max-w-5xl px-4 pb-16 text-center md:pb-20">
-          <h2 className="text-3xl font-semibold text-white md:text-5xl">Need work like this on your property?</h2>
-          <p className="mx-auto mt-4 max-w-2xl leading-relaxed text-white/70">
-            Send a quick message with your location and a few photos of the area. We can talk through landscaping, cleanup, material delivery, tree work, grading, or excavation options.
-          </p>
-          <Link href="/#contact" className="mt-7 inline-flex items-center gap-2 rounded-full bg-emerald-400 px-6 py-3 font-bold text-black transition hover:bg-emerald-300">
-            Request Quote <ArrowRight className="h-4 w-4" />
-          </Link>
+        <section className="mx-auto max-w-7xl px-4 py-16 md:px-8 md:py-24">
+          <SectionHeading
+            eyebrow="Project Photos"
+            title="Landscaping, cleanup, materials, and equipment at work"
+            text="These are real photos from recent projects, available materials, and outdoor work around the area."
+          />
+          <div className="mt-11 columns-1 gap-5 sm:columns-2 lg:columns-3">
+            {siteData.galleryImages.map((image, index) => (
+              <figure key={`${image.src}-${index}`} className="mb-5 break-inside-avoid overflow-hidden rounded-[1.35rem] border border-white/10 bg-white/[0.035] p-3 shadow-lg shadow-black/10">
+                <Image
+                  src={image.src}
+                  alt={image.alt}
+                  width={700}
+                  height={620}
+                  sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                  className="h-auto w-full rounded-[1rem] object-cover"
+                />
+                <figcaption className="px-1 pb-1 pt-3 text-sm leading-6 text-white/56">{image.alt}</figcaption>
+              </figure>
+            ))}
+          </div>
+        </section>
+
+        <section className="mx-auto max-w-5xl px-4 pb-16 text-center md:px-8 md:pb-24">
+          <div className="rounded-[2rem] border border-emerald-300/15 bg-emerald-300/[0.055] px-6 py-12 md:px-12">
+            <h2 className="text-3xl font-semibold text-white md:text-5xl">Need work like this on your property?</h2>
+            <p className="mx-auto mt-5 max-w-2xl leading-8 text-white/68">
+              Send your location, a few photos, and a quick description of the job. We can talk through landscaping, cleanup, material delivery, tree work, grading, or excavation options.
+            </p>
+            <Link href="/#contact" className="btn-quote-primary mt-8 inline-flex items-center gap-2">
+              Request Quote <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
         </section>
       </main>
 

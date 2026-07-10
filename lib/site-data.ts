@@ -6,7 +6,7 @@ export const siteData = {
     shortName: "Onward & Upward",
     tagline:
       "Landscaping, excavation, tree work, soil, mulch, and cleanup services around Hot Springs, Arkansas.",
-    logo: "/images/logo.png",
+    logo: "/images/logo-mark.webp",
   },
 
   contact: {
@@ -54,7 +54,7 @@ export const siteData = {
       shortTitle: "Landscaping",
       text:
         "Landscape bed cleanup, mulch, planting help, yard refreshes, brush cleanup, and practical outdoor improvements.",
-      image: "/images/services/landscaping2.png",
+      image: "/images/projects/mulch-after-3.webp",
       alt: "Landscaping services in Hot Springs AR",
       href: "/landscaping-hot-springs-ar",
     },
@@ -63,7 +63,7 @@ export const siteData = {
       shortTitle: "Excavation",
       text:
         "Site prep, grading, small excavation, dirt work, driveway touchups, drainage help, and property shaping.",
-      image: "/images/gallery/excavator.jpg",
+      image: "/images/projects/tractor-work.webp",
       alt: "Excavation and dirt work in Hot Springs AR",
       href: "/excavation-hot-springs-ar",
     },
@@ -90,7 +90,7 @@ export const siteData = {
       shortTitle: "Mulch & Soil",
       text:
         "Supersoil blends, compost, sandy loam, mulch, garden soil, and materials for pickup or delivery.",
-      image: "/images/gallery/soil6.jpg",
+      image: "/images/projects/garden-plot.webp",
       alt: "Mulch soil and material delivery in Hot Springs AR",
       href: "/mulch-soil-delivery-hot-springs-ar",
     },
@@ -99,7 +99,7 @@ export const siteData = {
       shortTitle: "Grading",
       text:
         "Light grading, leveling, water flow help, driveway washout repair, and practical drainage improvements.",
-      image: "/images/gallery/tractorandtruck.jpg",
+      image: "/images/projects/tractor-work.webp",
       alt: "Grading and drainage help in Hot Springs AR",
       href: "/grading-drainage-hot-springs-ar",
     },
@@ -108,7 +108,7 @@ export const siteData = {
       shortTitle: "Yard Cleanup",
       text:
         "Brush piles, debris, seasonal cleanup, small haul-off jobs, and general property cleanup around the yard.",
-      image: "/images/gallery/work5.jpg",
+      image: "/images/projects/mulch-after-2.webp",
       alt: "Yard cleanup and hauling in Hot Springs AR",
       href: "/yard-cleanup-hot-springs-ar",
     },
@@ -116,24 +116,34 @@ export const siteData = {
 
   gallery: [
     {
+      title: "Mulch bed refresh",
+      before: "/images/projects/mulch-before-1.webp",
+      after: "/images/projects/mulch-after-3.webp",
+      alt: "Mulch bed refresh and landscaping in Hot Springs AR",
+    },
+    {
+      title: "Front yard mulch work",
+      before: "/images/projects/mulch-before-2.webp",
+      after: "/images/projects/mulch-after-2.webp",
+      alt: "Front yard mulch installation in Hot Springs AR",
+    },
+    {
       title: "Driveway cleanup",
       before: "/images/gallery/before1.png",
       after: "/images/gallery/after1.png",
       alt: "Driveway cleanup and grading in Hot Springs AR",
     },
-    {
-      title: "Brush cleanup",
-      before: "/images/gallery/before3.jpg",
-      after: "/images/gallery/after3.jpg",
-      alt: "Brush clearing and landscaping in Hot Springs AR",
-    },
-    {
-      title: "Seasonal planting",
-      before: "/images/gallery/before4.jpg",
-      after: "/images/gallery/after4.jpg",
-      alt: "Seasonal planting and landscaping in Arkansas",
-    },
   ],
+
+  featuredProject: {
+    title: "A full mulch refresh around the front yard",
+    text:
+      "This project included spreading and shaping fresh mulch through the front beds and tree areas, then cleaning up the edges for a finished look.",
+    before: "/images/projects/mulch-before-1.webp",
+    after: "/images/projects/mulch-after-3.webp",
+    detailImage: "/images/projects/mulch-after-1.webp",
+    alt: "Before and after mulch bed refresh in Hot Springs Arkansas",
+  },
 
   seasonalItems: [
     {
@@ -228,6 +238,13 @@ export const siteData = {
   ],
 
   galleryImages: [
+    { src: "/images/projects/mulch-after-3.webp", alt: "Finished front yard mulch refresh in Hot Springs Arkansas" },
+    { src: "/images/projects/mulch-after-2.webp", alt: "Fresh mulch installed around a Hot Springs front yard" },
+    { src: "/images/projects/mulch-after-1.webp", alt: "Mulch installation in progress around mature trees" },
+    { src: "/images/projects/garden-plot.webp", alt: "Raised garden bed with healthy soil and planted vegetables" },
+    { src: "/images/projects/tractor-work.webp", alt: "Tractor moving rich soil for an outdoor property project" },
+    { src: "/images/projects/mulch-before-1.webp", alt: "Front yard before a mulch bed refresh" },
+    { src: "/images/projects/mulch-before-2.webp", alt: "Landscape beds before fresh mulch was installed" },
     { src: "/images/gallery/after2.png", alt: "Finished landscaping cleanup in Hot Springs AR" },
     { src: "/images/gallery/after3.jpg", alt: "Brush cleanup and property work in Hot Springs AR" },
     { src: "/images/gallery/after4.jpg", alt: "Seasonal planting and landscaping in Arkansas" },
@@ -294,14 +311,14 @@ export const servicePages: Record<string, ServicePageData> = {
     slug: "landscaping-hot-springs-ar",
     title: "Landscaping Hot Springs AR",
     navTitle: "Landscaping",
-    metaTitle: "Landscaping, Mulch & Yard Cleanup in Hot Springs, AR | Onward & Upward",
+    metaTitle: "Landscaping in Hot Springs, AR",
     metaDescription:
-      "Landscaping services in Hot Springs, AR including mulch installation, soil delivery, flower bed cleanup, grading, brush clearing, debris removal, and property refresh work.",
+      "Landscaping in Hot Springs, AR including mulch installation, flower bed cleanup, soil delivery, brush clearing, grading, debris removal, and yard refreshes.",
     heroTitle: "Landscaping Services in Hot Springs, AR",
     heroText:
       "Onward & Upward Services provides landscape bed cleanup, mulch installation, soil delivery, flower bed refreshes, grading, brush clearing, debris removal, and outdoor property work for homes and properties around Hot Springs and nearby Arkansas communities.",
     eyebrow: "Local Landscaping",
-    image: "/images/services/landscaping2.png",
+    image: "/images/projects/mulch-after-3.webp",
     imageAlt: "landscaping services and yard cleanup in Hot Springs Arkansas",
     serviceType: "LandscapingService",
     highlights: ["Mulch and bed refreshes", "Soil and garden material help", "Brush and debris cleanup", "Small grading and property shaping"],
@@ -313,7 +330,7 @@ export const servicePages: Record<string, ServicePageData> = {
     localText:
       "We serve Hot Springs, Benton, Bryant, Malvern, Glenwood, Arkadelphia, and surrounding Central Arkansas communities with practical landscaping and cleanup work.",
     secondaryText:
-      "If you are searching for landscaping in Hot Springs, yard cleanup near Benton, mulch installation in Bryant, soil delivery in Malvern, or brush cleanup around Central Arkansas, this page is built around those local services.",
+      "Homeowners, rental property owners, and local businesses can combine cleanup, materials, and installation into one practical project instead of coordinating several different crews.",
     faq: [
       { question: "Do you handle small landscaping jobs?", answer: "Yes. We handle smaller jobs like bed cleanup, mulch, soil, brush cleanup, and yard refreshes, along with larger property projects." },
       { question: "Can you deliver mulch or soil for a landscaping project?", answer: "Yes. Soil, mulch, compost blends, and other landscape materials may be available for pickup or delivery depending on location and availability." },
@@ -325,14 +342,14 @@ export const servicePages: Record<string, ServicePageData> = {
     slug: "excavation-hot-springs-ar",
     title: "Excavation Hot Springs AR",
     navTitle: "Excavation",
-    metaTitle: "Excavation, Dirt Work & Grading in Hot Springs, AR | Onward & Upward",
+    metaTitle: "Excavation & Grading in Hot Springs, AR",
     metaDescription:
       "Excavation and dirt work in Hot Springs, AR including grading, small site prep, drainage help, land clearing, driveway repair, and property shaping.",
     heroTitle: "Excavation & Dirt Work in Hot Springs, AR",
     heroText:
       "We help with excavation, dirt work, light grading, land clearing, drainage support, driveway touchups, and property shaping around Hot Springs and nearby Central Arkansas areas.",
     eyebrow: "Dirt Work & Grading",
-    image: "/images/gallery/excavator.jpg",
+    image: "/images/projects/tractor-work.webp",
     imageAlt: "excavation and dirt work in Hot Springs Arkansas",
     serviceType: "ExcavationContractor",
     highlights: ["Small excavation", "Grading and leveling", "Drainage support", "Driveway and property shaping"],
@@ -344,7 +361,7 @@ export const servicePages: Record<string, ServicePageData> = {
     localText:
       "We work around Hot Springs, Benton, Bryant, Malvern, Glenwood, Arkadelphia, and surrounding communities on residential and small commercial outdoor projects.",
     secondaryText:
-      "Searches like excavation Hot Springs AR, dirt work near Benton, grading in Bryant, and drainage help around Malvern are exactly the kinds of local jobs this page is meant to support.",
+      "Every property is different, so we look at access, drainage, soil, slope, and the amount of material involved before recommending the right approach.",
     faq: [
       { question: "Do you do small excavation jobs?", answer: "Yes. We focus on practical outdoor excavation, grading, dirt work, and property shaping jobs that fit the equipment and scope." },
       { question: "Can you help with drainage or washout areas?", answer: "Yes. We can look at low spots, washouts, driveway issues, and water flow problems and talk through a practical repair plan." },
@@ -356,7 +373,7 @@ export const servicePages: Record<string, ServicePageData> = {
     slug: "tree-removal-hot-springs-ar",
     title: "Tree Removal Hot Springs AR",
     navTitle: "Tree Removal",
-    metaTitle: "Tree Removal, Land Clearing & Cleanup in Hot Springs, AR | Onward & Upward",
+    metaTitle: "Tree & Brush Cleanup in Hot Springs, AR",
     metaDescription:
       "Tree removal, brush clearing, storm cleanup, debris hauling, and land clearing in Hot Springs, Benton, Bryant, Malvern, Glenwood, Arkadelphia, and nearby areas.",
     heroTitle: "Tree Removal & Cleanup in Hot Springs, AR",
@@ -375,7 +392,7 @@ export const servicePages: Record<string, ServicePageData> = {
     localText:
       "We serve Hot Springs, Benton, Bryant, Malvern, Glenwood, Arkadelphia, and surrounding Central Arkansas communities with tree cleanup, land clearing, brush cutting, and debris cleanup services.",
     secondaryText:
-      "If you are searching for tree removal in Hot Springs, land clearing near Benton, brush cleanup in Bryant, or storm cleanup in Malvern, Onward & Upward Services is ready to help.",
+      "Tree and brush work can often be combined with hauling, land clearing, or a general property cleanup so the area is left usable instead of half-finished.",
     faq: [
       { question: "Do you haul off branches and debris?", answer: "Yes. Debris hauling and cleanup can be part of the job depending on the project and location." },
       { question: "Do you handle storm cleanup?", answer: "Yes. We can help with fallen limbs, storm debris, brush piles, and cleanup after weather-related damage." },
@@ -387,10 +404,10 @@ export const servicePages: Record<string, ServicePageData> = {
     slug: "land-clearing-hot-springs-ar",
     title: "Land Clearing Hot Springs AR",
     navTitle: "Land Clearing",
-    metaTitle: "Land Clearing & Brush Cleanup in Hot Springs, AR | Onward & Upward",
+    metaTitle: "Land Clearing in Hot Springs, AR",
     metaDescription:
       "Land clearing and brush cleanup in Hot Springs, AR including overgrown lots, fence lines, small acreage cleanup, debris hauling, and property clearing.",
-    heroTitle: "Land Clearing & Brush Cleanup in Hot Springs, AR",
+    heroTitle: "Land Clearing in Hot Springs, AR",
     heroText:
       "We clear overgrown areas, brush piles, property edges, rough lots, fence lines, and small acreage areas so the land is easier to use, maintain, and improve.",
     eyebrow: "Brush & Overgrowth",
@@ -406,7 +423,7 @@ export const servicePages: Record<string, ServicePageData> = {
     localText:
       "We serve Hot Springs and nearby areas including Benton, Bryant, Malvern, Glenwood, and Arkadelphia with brush cleanup, land clearing, and outdoor property cleanup.",
     secondaryText:
-      "This page supports searches for land clearing Hot Springs AR, brush cleanup near Benton, property clearing Bryant AR, and overgrown lot cleanup in Central Arkansas.",
+      "We can look at the amount of growth, access for equipment, debris volume, and the way you plan to use the property before putting together a quote.",
     faq: [
       { question: "Do you clear overgrown lots?", answer: "Yes. We can help with overgrown lots, property edges, brush piles, and small clearing jobs." },
       { question: "Can you clear fence lines?", answer: "Yes. Fence line cleanup and edge clearing can be included depending on access and the amount of growth." },
@@ -418,14 +435,14 @@ export const servicePages: Record<string, ServicePageData> = {
     slug: "mulch-soil-delivery-hot-springs-ar",
     title: "Mulch & Soil Delivery Hot Springs AR",
     navTitle: "Mulch & Soil",
-    metaTitle: "Mulch, Soil & Supersoil Delivery in Hot Springs, AR | Onward & Upward",
+    metaTitle: "Mulch & Soil Delivery in Hot Springs, AR",
     metaDescription:
       "Mulch, soil, compost, sandy loam, supersoil, and landscape material delivery in Hot Springs, AR and nearby Central Arkansas areas.",
     heroTitle: "Mulch, Soil & Landscape Material Delivery in Hot Springs, AR",
     heroText:
       "We offer mulch, compost blends, sandy loam, supersoil, garden soil, and landscape materials for pickup or delivery depending on current availability and location.",
     eyebrow: "Soil & Materials",
-    image: "/images/gallery/soil6.jpg",
+    image: "/images/projects/garden-plot.webp",
     imageAlt: "mulch soil compost and landscape material delivery in Hot Springs Arkansas",
     serviceType: "DeliveryService",
     highlights: ["Compost blends", "Mulch and soil", "Pickup or delivery", "Garden and landscape projects"],
@@ -437,7 +454,7 @@ export const servicePages: Record<string, ServicePageData> = {
     localText:
       "Material availability can rotate, but we serve Hot Springs and nearby Central Arkansas communities with soil, mulch, compost, and landscape materials when available.",
     secondaryText:
-      "This page supports searches for mulch delivery Hot Springs AR, soil delivery near Benton, garden soil Bryant AR, and supersoil Central Arkansas.",
+      "Material delivery can also be paired with bed cleanup, spreading, light grading, or other outdoor work when the project calls for more than a simple drop-off.",
     faq: [
       { question: "What soil blends are available?", answer: "Current product options include compost and manure blend, compost, manure and sandy loam blend, and supersoil blend, depending on availability." },
       { question: "Can you deliver mulch or soil?", answer: "Delivery may be available depending on location, amount, timing, and current material availability." },
@@ -449,14 +466,14 @@ export const servicePages: Record<string, ServicePageData> = {
     slug: "grading-drainage-hot-springs-ar",
     title: "Grading & Drainage Hot Springs AR",
     navTitle: "Grading",
-    metaTitle: "Grading & Drainage Help in Hot Springs, AR | Onward & Upward",
+    metaTitle: "Grading & Drainage in Hot Springs, AR",
     metaDescription:
       "Light grading, drainage help, driveway washout repair, leveling, dirt work, and property shaping in Hot Springs, AR and nearby Central Arkansas areas.",
-    heroTitle: "Grading & Drainage Help in Hot Springs, AR",
+    heroTitle: "Grading & Drainage in Hot Springs, AR",
     heroText:
       "We help with light grading, leveling, washout areas, driveway touchups, and practical drainage improvements for homes and properties around Hot Springs and Central Arkansas.",
     eyebrow: "Water Flow & Property Shape",
-    image: "/images/gallery/tractorandtruck.jpg",
+    image: "/images/projects/tractor-work.webp",
     imageAlt: "grading drainage and property shaping in Hot Springs Arkansas",
     serviceType: "ExcavationContractor",
     highlights: ["Light grading", "Drainage help", "Driveway washouts", "Leveling and shaping"],
@@ -468,7 +485,7 @@ export const servicePages: Record<string, ServicePageData> = {
     localText:
       "We serve Hot Springs, Benton, Bryant, Malvern, Glenwood, Arkadelphia, and nearby Central Arkansas communities with grading, drainage help, and dirt work.",
     secondaryText:
-      "This page is built for searches like grading Hot Springs AR, drainage help near Benton, driveway washout repair Bryant, and dirt work in Central Arkansas.",
+      "Good grading starts with how water moves across the property. We focus on practical improvements that fit the site rather than forcing the same fix on every job.",
     faq: [
       { question: "Can you fix driveway washouts?", answer: "We can look at driveway washouts and rough areas and talk through practical grading, material, or drainage options." },
       { question: "Do you do drainage installs?", answer: "We handle practical drainage help and property shaping. The exact solution depends on the site, access, and water flow issue." },
@@ -480,14 +497,14 @@ export const servicePages: Record<string, ServicePageData> = {
     slug: "yard-cleanup-hot-springs-ar",
     title: "Yard Cleanup Hot Springs AR",
     navTitle: "Yard Cleanup",
-    metaTitle: "Yard Cleanup, Brush Removal & Hauling in Hot Springs, AR | Onward & Upward",
+    metaTitle: "Yard Cleanup & Hauling in Hot Springs, AR",
     metaDescription:
       "Yard cleanup, brush removal, debris hauling, seasonal cleanup, storm cleanup, and property cleanup in Hot Springs, AR and nearby Central Arkansas areas.",
     heroTitle: "Yard Cleanup & Hauling in Hot Springs, AR",
     heroText:
       "We help clean up yards, brush piles, debris, overgrown areas, storm messes, and outdoor clutter so the property looks better and is easier to maintain.",
     eyebrow: "Cleanup & Hauling",
-    image: "/images/gallery/work5.jpg",
+    image: "/images/projects/mulch-after-2.webp",
     imageAlt: "yard cleanup brush removal and hauling in Hot Springs Arkansas",
     serviceType: "HomeAndConstructionBusiness",
     highlights: ["Brush piles", "Debris hauling", "Seasonal cleanup", "Property refreshes"],
@@ -499,7 +516,7 @@ export const servicePages: Record<string, ServicePageData> = {
     localText:
       "We serve Hot Springs, Benton, Bryant, Malvern, Glenwood, Arkadelphia, and nearby Central Arkansas communities with cleanup and hauling support.",
     secondaryText:
-      "This page supports searches for yard cleanup Hot Springs AR, debris hauling near Benton, brush removal Bryant AR, and property cleanup Central Arkansas.",
+      "Cleanup jobs can be quoted by the amount of material, access, hauling needs, and whether the area also needs brush cutting, grading, or a fresh layer of mulch.",
     faq: [
       { question: "Do you remove brush piles?", answer: "Yes. Brush pile cleanup and hauling can be included depending on volume, access, and disposal needs." },
       { question: "Can you help after a storm?", answer: "Yes. We can help with fallen limbs, yard debris, and general outdoor storm cleanup." },
@@ -523,8 +540,8 @@ export const areaPages: Record<string, AreaPageData> = {
   "hot-springs-ar": {
     slug: "hot-springs-ar",
     city: "Hot Springs, AR",
-    title: "Landscaping, Excavation & Tree Work in Hot Springs, AR",
-    metaTitle: "Landscaping, Excavation & Tree Work in Hot Springs, AR | Onward & Upward",
+    title: "Outdoor Property Services in Hot Springs, AR",
+    metaTitle: "Outdoor Property Services in Hot Springs, AR",
     metaDescription:
       "Outdoor property services in Hot Springs, AR including landscaping, excavation, tree cleanup, land clearing, grading, mulch, soil delivery, and debris hauling.",
     heroText:
@@ -534,8 +551,8 @@ export const areaPages: Record<string, AreaPageData> = {
   "benton-ar": {
     slug: "benton-ar",
     city: "Benton, AR",
-    title: "Landscaping, Cleanup & Dirt Work near Benton, AR",
-    metaTitle: "Landscaping, Cleanup & Dirt Work near Benton, AR | Onward & Upward",
+    title: "Landscaping & Dirt Work near Benton, AR",
+    metaTitle: "Landscaping & Dirt Work near Benton, AR",
     metaDescription:
       "Landscaping, yard cleanup, brush removal, excavation, grading, mulch, soil delivery, and property cleanup near Benton, Arkansas.",
     heroText:
@@ -545,8 +562,8 @@ export const areaPages: Record<string, AreaPageData> = {
   "bryant-ar": {
     slug: "bryant-ar",
     city: "Bryant, AR",
-    title: "Landscaping, Brush Cleanup & Material Delivery near Bryant, AR",
-    metaTitle: "Landscaping, Brush Cleanup & Material Delivery near Bryant, AR | Onward & Upward",
+    title: "Landscaping & Cleanup near Bryant, AR",
+    metaTitle: "Landscaping & Cleanup near Bryant, AR",
     metaDescription:
       "Landscaping, mulch, soil delivery, brush cleanup, debris hauling, grading, and outdoor property services near Bryant, Arkansas.",
     heroText:
@@ -556,8 +573,8 @@ export const areaPages: Record<string, AreaPageData> = {
   "malvern-ar": {
     slug: "malvern-ar",
     city: "Malvern, AR",
-    title: "Landscaping, Tree Cleanup & Excavation near Malvern, AR",
-    metaTitle: "Landscaping, Tree Cleanup & Excavation near Malvern, AR | Onward & Upward",
+    title: "Landscaping & Dirt Work near Malvern, AR",
+    metaTitle: "Landscaping & Dirt Work near Malvern, AR",
     metaDescription:
       "Outdoor property services near Malvern, AR including landscaping, tree cleanup, land clearing, excavation, grading, mulch, soil, and debris hauling.",
     heroText:
@@ -567,8 +584,8 @@ export const areaPages: Record<string, AreaPageData> = {
   "glenwood-ar": {
     slug: "glenwood-ar",
     city: "Glenwood, AR",
-    title: "Landscaping, Land Clearing & Cleanup near Glenwood, AR",
-    metaTitle: "Landscaping, Land Clearing & Cleanup near Glenwood, AR | Onward & Upward",
+    title: "Landscaping & Land Clearing near Glenwood, AR",
+    metaTitle: "Landscaping & Land Clearing near Glenwood, AR",
     metaDescription:
       "Landscaping, land clearing, brush cleanup, tree debris, grading, mulch, soil delivery, and property cleanup near Glenwood, Arkansas.",
     heroText:
@@ -578,8 +595,8 @@ export const areaPages: Record<string, AreaPageData> = {
   "arkadelphia-ar": {
     slug: "arkadelphia-ar",
     city: "Arkadelphia, AR",
-    title: "Landscaping, Yard Cleanup & Dirt Work near Arkadelphia, AR",
-    metaTitle: "Landscaping, Yard Cleanup & Dirt Work near Arkadelphia, AR | Onward & Upward",
+    title: "Landscaping & Dirt Work near Arkadelphia, AR",
+    metaTitle: "Landscaping & Dirt Work near Arkadelphia, AR",
     metaDescription:
       "Landscaping, yard cleanup, excavation, dirt work, grading, tree cleanup, mulch, soil delivery, and debris hauling near Arkadelphia, Arkansas.",
     heroText:

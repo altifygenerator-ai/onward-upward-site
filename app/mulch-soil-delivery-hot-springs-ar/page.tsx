@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     url: `${siteUrl}/mulch-soil-delivery-hot-springs-ar`,
     images: [
       {
-        url: page.image,
+        url: "/images/og-home.jpg",
         width: 1200,
         height: 630,
         alt: page.imageAlt,
